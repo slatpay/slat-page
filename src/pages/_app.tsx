@@ -1,6 +1,14 @@
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { globalStyles } from '@/styles/global'
+import { WithApollo } from '@/libs/apollo'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  globalStyles()
+
+  return (
+    <WithApollo>
+      <Component {...pageProps} />
+    </WithApollo>
+  )
 }

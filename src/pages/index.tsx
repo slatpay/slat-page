@@ -55,7 +55,7 @@ export default function Home() {
         />
         <meta property="og:image" content="/favicon.png" />
         <meta property="og:url" content="https://www.slatpay.com" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={montserrat.className}>
         <Main featuresRef={featuresRef} feesRef={feesRef} />

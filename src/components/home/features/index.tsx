@@ -26,17 +26,17 @@ import { useInView } from 'react-intersection-observer'
 const accordionImg = (accordion: string) => {
   switch (accordion) {
     case 'item-1':
-      return 'http://localhost:3016/cdn/1.mp4'
+      return 'https://cdn.slatpay.com/cdn/1.mp4'
     case 'item-2':
-      return 'http://localhost:3016/cdn/2.mp4'
+      return 'https://cdn.slatpay.com/cdn/2.mp4'
     case 'item-3':
-      return 'http://localhost:3016/cdn/3.mp4'
+      return 'https://cdn.slatpay.com/cdn/3.mp4'
     case 'item-4':
-      return 'http://localhost:3016/cdn/4.mp4'
+      return 'https://cdn.slatpay.com/cdn/4.mp4'
     case 'item-5':
-      return 'http://localhost:3016/cdn/5.mp4'
+      return 'https://cdn.slatpay.com/cdn/5.mp4'
     default:
-      return 'http://localhost:3016/cdn/1.mp4'
+      return 'https://cdn.slatpay.com/cdn/1.mp4'
   }
 }
 

@@ -50,14 +50,14 @@ export function Stream() {
       </StreamContent>
       <StreamContent direction="normal">
         <video
-          key="http://localhost:3016/cdn/6.mp4"
+          key="https://cdn.slatpay.com/cdn/6.mp4"
           width={500}
           height={500}
           autoPlay
           muted
           loop
         >
-          <source src="http://localhost:3016/cdn/6.mp4" type="video/mp4" />
+          <source src="https://cdn.slatpay.com/cdn/6.mp4" type="video/mp4" />
         </video>
 
         <div>

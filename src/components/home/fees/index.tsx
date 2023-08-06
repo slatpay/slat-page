@@ -33,7 +33,15 @@ export function Fees({ feesRef }: FeesProps) {
             <br />
             <span>More Profit</span>
           </h2>
-          <Image src={GraphGif} alt="Fees" width={355} height={265} />
+          <Image
+            style={{
+              maxWidth: '100%',
+            }}
+            src={GraphGif}
+            alt="Fees"
+            width={355}
+            height={265}
+          />
           <div>
             <p>
               Experience a game-changing <span>5% sales commission.</span> More
@@ -48,7 +56,15 @@ export function Fees({ feesRef }: FeesProps) {
           <h2>
             <span>Step into</span> Tomorrow
           </h2>
-          <Image src={RocketGif} alt="Fees" width={355} height={265} />
+          <Image
+            style={{
+              maxWidth: '100%',
+            }}
+            src={RocketGif}
+            alt="Fees"
+            width={355}
+            height={265}
+          />
           <div>
             <p>
               SlatPay is more than a tool, it's a leap towards the future of

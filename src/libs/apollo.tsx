@@ -12,7 +12,7 @@ import { ReactNode } from 'react'
 // lib/apolloClient.js
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3000/graphql',
+  uri: 'https://api.slatpay.com/graphql',
   headers: {
     Authorization: `Bearer ${
       typeof window !== 'undefined' ? localStorage.getItem('user-token') : ''

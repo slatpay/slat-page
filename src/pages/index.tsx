@@ -29,16 +29,9 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    function handleLoad() {
+    setTimeout(() => {
       setLoaded(true)
-    }
-
-    if (document.readyState === 'complete') {
-      handleLoad() // Se o documento já estiver pronto, definimos o projectId imediatamente
-    } else {
-      window.addEventListener('DOMContentLoaded', handleLoad)
-      return () => window.removeEventListener('DOMContentLoaded', handleLoad) // Limpa o listener quando o componente for desmontado
-    }
+    }, 2000)
   }, [])
 
   if (!loaded) {

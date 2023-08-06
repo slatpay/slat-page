@@ -31,14 +31,14 @@ export function Main({ featuresRef, feesRef }: MainProps) {
 
   // change numCells per responsive
 
-  const cellSize = 80 // Tamanho da célula em pixels
+  const cellSize = 90 // Tamanho da célula em pixels
 
   const numCellsWidth =
     typeof window !== 'undefined' ? Math.floor(window.innerWidth / cellSize) : 0
 
   const numCellsHeight =
     typeof window !== 'undefined'
-      ? Math.floor((window.innerHeight * 1.2) / cellSize)
+      ? Math.floor((window.innerHeight * 1.5) / cellSize)
       : 0
 
   const numCells = numCellsWidth * numCellsHeight

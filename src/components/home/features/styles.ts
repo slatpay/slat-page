@@ -4,7 +4,7 @@ import { CaretDown } from 'phosphor-react'
 
 export const FeaturesContainer = styled('div', {
   width: '120vw',
-  height: '90vh',
+  height: '100vh',
   marginLeft: '-10vw',
   marginTop: '-30vh',
   transform: 'rotate(-2.551deg)',

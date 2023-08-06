@@ -82,7 +82,7 @@ export function Header({
             {featuresRef && (
               <button onClick={() => goToRef(featuresRef)}>Features</button>
             )}
-            <Link href="/faq">FAQ</Link>
+            {/* <Link href="/faq">FAQ</Link> */}
             {feesRef && <button onClick={() => goToRef(feesRef)}>Fees</button>}
           </nav>
 

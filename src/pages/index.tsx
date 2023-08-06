@@ -54,7 +54,7 @@ export default function Home() {
           content="Slatpay é uma solução de pagamento inovadora."
         />
         <meta property="og:image" content="/favicon.png" />
-        <meta property="og:url" content="https://www.your-website.com" />
+        <meta property="og:url" content="https://www.slatpay.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={montserrat.className}>

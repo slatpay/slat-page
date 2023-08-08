@@ -17,7 +17,11 @@ export function Footer() {
             height={70}
           />
 
-          <p className="copyrights">© 2023 SlatPay Tecnologia, LTDA.</p>
+          <p className="copyrights">
+            © 2023 SlatPay Tecnologia, LTDA. <br />
+            CNPJ: 51.713.319/0001-03 <br />
+            AV ALÍCIO ARANTES CAMPOLINA,PIONEIRO 2882 - PR <br />
+          </p>
         </div>
         <FooterLinks>
           <div>

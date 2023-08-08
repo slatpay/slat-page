@@ -31,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true)
-    }, 850)
+    }, 450)
   }, [])
 
   if (!loaded) {

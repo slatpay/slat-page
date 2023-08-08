@@ -18,7 +18,7 @@ export const MainContainer = styled('div', {
     height: '100%',
     width: '100%',
     background:
-      'radial-gradient(ellipse at center, rgba(255,255,255,0) 15%, #00040B 100%)',
+      'radial-gradient(ellipse at center, #00040B00 15%, #00040B 100%)',
     zIndex: 5,
   },
 
@@ -31,6 +31,7 @@ export const MainContainer = styled('div', {
       'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
     zIndex: 3,
     transition: 'all 0.2s ease-in-out',
+    '-webkit-transition': 'all 0.2s ease-in-out',
   },
 })
 
@@ -94,14 +95,15 @@ export const MainContent = styled('div', {
     },
 
     span: {
-      // create linear gradient animation
       background: 'linear-gradient(90deg, $slat-dark 0%, $slat-light 100%)',
       backgroundClip: 'text',
-      WebkitBackgroundClip: 'text',
+      '-webkit-background-clip': 'text',
       WebkitTextFillColor: 'transparent',
+      '-webkit-text-fill-color': 'transparent',
       backgroundSize: '200% 200%',
       backgroundPosition: '0% 50%',
       animation: `${gradientAnimation} 5s ease infinite`,
+      '-webkit-animation': `${gradientAnimation} 5s ease infinite`,
     },
   },
 

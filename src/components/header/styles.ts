@@ -18,6 +18,10 @@ export const HeaderContent = styled('div', {
   maxWidth: 1120,
   margin: '0 auto',
 
+  '@media (max-width: 768px)': {
+    maxWidth: '100vw',
+  },
+
   img: {
     objectFit: 'cover',
     transition: 'all 0.3s ease-in-out',

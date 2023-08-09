@@ -29,6 +29,7 @@ export const FeaturesContainer = styled('div', {
     height: 'auto',
     maxWidth: '100vw',
     marginLeft: 0,
+    marginTop: 0,
     transform: 'rotate(0deg) !important',
   },
 })
@@ -110,7 +111,6 @@ export const FeaturesGrid = styled('div', {
 
   '@media (max-width: 768px)': {
     gridTemplateColumns: 'repeat(1, 1fr)',
-    padding: '0 2rem',
   },
 
   video: {

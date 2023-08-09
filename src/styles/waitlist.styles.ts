@@ -49,13 +49,13 @@ export const WaitListContent = styled('div', {
 
     div: {
       '&:nth-child(1)': {
-        width: 200,
+        width: 100,
         height: '1px',
         background: 'linear-gradient(-90deg, #ffffff30 0%, #ffffff00 100%)',
       },
 
       '&:nth-child(3)': {
-        width: 200,
+        width: 100,
         height: '1px',
         background: 'linear-gradient(90deg, #ffffff30 0%, #ffffff00 100%)',
       },

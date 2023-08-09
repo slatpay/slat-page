@@ -3,6 +3,7 @@ import { StartContainer, StartContent } from './styles'
 import { useRouter } from 'next/router'
 import { useInView } from 'react-intersection-observer'
 import Background from '@/assets/startBg.gif'
+import { useTranslation } from 'next-i18next'
 
 export function Start() {
   const router = useRouter()
@@ -11,6 +12,8 @@ export function Start() {
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
   })
+
+  const { t } = useTranslation()
 
   return (
     <StartContainer
@@ -25,14 +28,11 @@ export function Start() {
     >
       <StartContent>
         <h2>
-          <span>Start with Slatpay</span>
+          <span>{t('less_fees_footer')}</span>
         </h2>
-        <p>
-          Get ahead, be part of the change. Sign up for our waitlist now and
-          secure your place at the forefront of online education.
-        </p>
+        <p>{t('get_ahead')}</p>
         <button onClick={() => router.push('/waitlist')}>
-          Open account <ArrowUpRight weight="bold" />
+          {t('open_account')} <ArrowUpRight weight="bold" />
         </button>
       </StartContent>
     </StartContainer>

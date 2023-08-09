@@ -14,8 +14,13 @@ export const BrandsContainer = styled('div', {
     display: 'none',
   },
 
+  // to tablet
+  '@media (max-width: 1024px)': {
+    marginTop: '400px',
+  },
+
   img: {
-    width: '100%',
-    objectFit: 'contain',
+    width: '90%',
+    objectFit: 'cover',
   },
 })

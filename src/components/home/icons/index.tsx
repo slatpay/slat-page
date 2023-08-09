@@ -10,12 +10,15 @@ import GlobeHemisphereEast from '@/assets/icons/4.gif'
 import Kanban from '@/assets/icons/5.gif'
 import CheckSquare from '@/assets/icons/6.gif'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 export function Icons() {
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
   })
+
+  const { t } = useTranslation()
 
   return (
     <IconsContainer
@@ -27,22 +30,14 @@ export function Icons() {
       ref={ref}
     >
       <IconsContent>
-        <h2>
-          More Than a Platform - <span> It's Your Marketplace</span>
-        </h2>
-        <p>
-          Unlock the potential of your info products with SlatPay. Effortless
-          selling, wider reach, and unprecedented growth are just a step away.
-        </p>
+        <h2 dangerouslySetInnerHTML={{ __html: t('icons_title') }} />
+        <p>{t('icons_desc')}</p>
 
         <IconsGrid>
           <div>
             <Image src={Cart} alt="Cart" quality={100} width={54} height={54} />
-            <h3>Optimized Checkout</h3>
-            <p>
-              Increase conversions with our streamlined and user-friendly
-              checkout process.
-            </p>
+            <h3>{t('icons_checkout_title')}</h3>
+            <p>{t('icons_checkout_desc')}</p>
           </div>
           <div>
             <Image
@@ -52,10 +47,8 @@ export function Icons() {
               width={54}
               height={54}
             />
-            <h3>Secure Transactions</h3>
-            <p>
-              Rest assured with our secure and reliable transaction processing.
-            </p>
+            <h3>{t('icons_secure_title')}</h3>
+            <p>{t('icons_secure_desc')}</p>
           </div>
           <div>
             <Image
@@ -65,11 +58,8 @@ export function Icons() {
               width={54}
               height={54}
             />
-            <h3>Powerful Analytics</h3>
-            <p>
-              Gain valuable insights into your sales and growth patterns with
-              our robust analytics.
-            </p>
+            <h3>{t('icons_analytics_title')}</h3>
+            <p>{t('icons_analytics_desc')}</p>
           </div>
           <div>
             <Image
@@ -79,8 +69,8 @@ export function Icons() {
               width={54}
               height={54}
             />
-            <h3>Increased Reach</h3>
-            <p>Expand your customer base with SlatPay's global marketplace</p>
+            <h3>{t('icons_reach_title')}</h3>
+            <p>{t('icons_reach_desc')}</p>
           </div>
           <div>
             <Image
@@ -90,11 +80,8 @@ export function Icons() {
               width={54}
               height={54}
             />
-            <h3>Streamlined Tasklists</h3>
-            <p>
-              Experience unparalleled organization and efficiency with our
-              comprehensive tasklists.
-            </p>
+            <h3>{t('icons_tasks_title')}</h3>
+            <p>{t('icons_tasks_desc')}</p>
           </div>
           <div>
             <Image
@@ -104,11 +91,8 @@ export function Icons() {
               width={54}
               height={54}
             />
-            <h3>Effortless Selling</h3>
-            <p>
-              Enjoy a user-friendly interface designed to make selling your info
-              products effective.
-            </p>
+            <h3>{t('icons_effortless_title')}</h3>
+            <p>{t('icons_effortless_desc')}</p>
           </div>
         </IconsGrid>
       </IconsContent>

@@ -105,7 +105,7 @@ const World = ({ width = 1300, height = 1300 }: Location) => {
         arcAltitude={() => 0.5}
         arcDashAnimateTime={() => 5000}
         hexPolygonsData={countries.features}
-        hexPolygonMargin={0.6} // d6iminuir para polígonos menores
+        hexPolygonMargin={0.5} // d6iminuir para polígonos menores
         hexPolygonColor={() => `#009ed88b`}
         width={width}
         height={height}

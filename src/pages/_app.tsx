@@ -2,8 +2,9 @@ import type { AppProps } from 'next/app'
 import { globalStyles } from '@/styles/global'
 import { WithApollo } from '@/libs/apollo'
 import 'react-toastify/dist/ReactToastify.css'
+import { appWithTranslation } from 'next-i18next'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   globalStyles()
 
   return (
@@ -12,3 +13,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </WithApollo>
   )
 }
+
+export default appWithTranslation(App)

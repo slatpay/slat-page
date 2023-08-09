@@ -12,6 +12,7 @@ import * as z from 'zod'
 import { useState } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import { ToastContainer, toast } from 'react-toastify'
+import { useTranslation } from 'next-i18next'
 
 const signup = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
@@ -82,8 +83,8 @@ export default function WaitList() {
         }),
         {
           pending: 'Loading...',
-          success: 'Subscribed to waitlist successfully',
-          error: 'Failed to subscribe to waitlist',
+          success: t('join_waitlist_success'),
+          error: t('join_waitlist_failed'),
         },
         {
           theme: 'dark',
@@ -98,6 +99,8 @@ export default function WaitList() {
       }
     }
   }
+
+  const { t } = useTranslation()
 
   return (
     <>
@@ -117,10 +120,7 @@ export default function WaitList() {
             <div />
           </div>
 
-          <h1>
-            Are you ready to share <br />
-            <span>your expertise?</span>
-          </h1>
+          <h1 dangerouslySetInnerHTML={{ __html: t('waitlist_title') }} />
 
           <form onSubmit={handleSubmit}>
             <div className="input">
@@ -155,7 +155,7 @@ export default function WaitList() {
             </div>
 
             <button type="submit">
-              Join Waitlist <ArrowRight size={20} weight="bold" />
+              {t('join_waitlist')} <ArrowRight size={20} weight="bold" />
             </button>
           </form>
 

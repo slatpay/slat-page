@@ -22,6 +22,7 @@ import {
 import { AccordionContentProps } from '@radix-ui/react-accordion'
 import React, { ForwardedRef } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useTranslation } from 'next-i18next'
 
 const accordionImg = (accordion: string) => {
   switch (accordion) {
@@ -53,6 +54,8 @@ export function Features({ featuresRef }: FeaturesProps) {
   const [accordion, setAccordion] = React.useState('item-1')
 
   const img = accordionImg(accordion)
+  const { t } = useTranslation()
+
   return (
     <FeaturesContainer
       css={{
@@ -64,14 +67,9 @@ export function Features({ featuresRef }: FeaturesProps) {
       ref={featuresRef}
     >
       <FeaturesContent ref={ref}>
-        <span className="tag">MANAGE YOUR PROJECT</span>
-        <h2>
-          Unveling Features, <span>Enabling Success</span>
-        </h2>
-        <p>
-          Discover the power of SlatPay's comprehensive, user-friendly features,
-          designed to transform your project and financial management.
-        </p>
+        <span className="tag">{t('manage_project')}</span>
+        <h2 dangerouslySetInnerHTML={{ __html: t('features_title') }} />
+        <p>{t('features_desc')}</p>
 
         <FeaturesGrid>
           <video key={img} width={600} height={415} autoPlay muted loop>
@@ -95,19 +93,14 @@ export function Features({ featuresRef }: FeaturesProps) {
                         gap: '10px',
                       }}
                     >
-                      <WifiHigh size={20} /> Real-time project collaboration
+                      <WifiHigh size={20} /> {t('feature_real_time_title')}
                     </div>
                     <StyledChevron aria-hidden />
                   </StyledTrigger>
                 </StyledHeader>
 
                 <AccordionContent>
-                  <p>
-                    Experience the power of real-time with SlatPay. Whether it's
-                    managing your team, tracking sales, or monitoring project
-                    progress, our real-time functionality keeps you updated
-                    every step of the way.
-                  </p>
+                  <p>{t('feature_real_time_desc')}</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
@@ -120,19 +113,14 @@ export function Features({ featuresRef }: FeaturesProps) {
                         gap: '10px',
                       }}
                     >
-                      <ChartBar size={20} /> Checkout Analysis Tools
+                      <ChartBar size={20} /> {t('feature_checkout_title')}
                     </div>
                     <StyledChevron aria-hidden />
                   </StyledTrigger>
                 </StyledHeader>
 
                 <AccordionContent>
-                  <p>
-                    Make informed decisions and boost your sales with our
-                    checkout analysis tools. They provide deep insights into
-                    consumer behavior, enabling you to optimize your strategy
-                    and reach your audience more effectively.
-                  </p>
+                  <p>{t('feature_checkout_desc')}</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
@@ -145,19 +133,14 @@ export function Features({ featuresRef }: FeaturesProps) {
                         gap: '10px',
                       }}
                     >
-                      <Wallet size={20} /> Send Money Feature
+                      <Wallet size={20} /> {t('feature_send_title')}
                     </div>
                     <StyledChevron aria-hidden />
                   </StyledTrigger>
                 </StyledHeader>
 
                 <AccordionContent>
-                  <p>
-                    Simplify transactions with our Send Money feature. With a
-                    few clicks, you can transfer funds quickly and securely.
-                    Whether you're paying suppliers or rewarding your team, we
-                    make financial transactions a hassle-free task.
-                  </p>
+                  <p>{t('feature_send_desc')}</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
@@ -170,20 +153,14 @@ export function Features({ featuresRef }: FeaturesProps) {
                         gap: '10px',
                       }}
                     >
-                      <CurrencyDollar size={20} /> Currency changer
+                      <CurrencyDollar size={20} /> {t('feature_currency_title')}
                     </div>
                     <StyledChevron aria-hidden />
                   </StyledTrigger>
                 </StyledHeader>
 
                 <AccordionContent>
-                  <p>
-                    Through our currency changer feature, you can sell your
-                    project in the currency of your choice and accommodate
-                    customers from all around the world. When creating a
-                    project, select your preferred currency and sell in the
-                    current currency. Don't let borders limit you.
-                  </p>
+                  <p>{t('feature_currency_desc')}</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
@@ -196,19 +173,14 @@ export function Features({ featuresRef }: FeaturesProps) {
                         gap: '10px',
                       }}
                     >
-                      <Users size={20} /> Affiliates Showcase
+                      <Users size={20} /> {t('feature_affiliates_title')}
                     </div>
                     <StyledChevron aria-hidden />
                   </StyledTrigger>
                 </StyledHeader>
 
                 <AccordionContent>
-                  <p>
-                    Expand your reach with our Affiliates Showcase feature.
-                    Display your products to other users and encourage them to
-                    try to become affiliates. It's a great way to maximize your
-                    product's visibility and expand your sales potential.
-                  </p>
+                  <p>{t('feature_affiliates_desc')}</p>
                 </AccordionContent>
               </AccordionItem>
             </AccordionRoot>

@@ -12,6 +12,7 @@ import Disruptive1 from '@/assets/Disruptive2.gif'
 import Disruptive2 from '@/assets/Disruptive1.gif'
 import Disruptive3 from '@/assets/Disruptive3.png'
 import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 
 export function Disruptive() {
   const router = useRouter()
@@ -19,6 +20,8 @@ export function Disruptive() {
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
   })
+
+  const { t } = useTranslation()
 
   return (
     <DisruptiveContainer
@@ -29,11 +32,16 @@ export function Disruptive() {
         transition: 'opacity 1s, transform 1s',
       }}
     >
-      <span className="title">Disruptive plataform</span>
+      <span className="title">
+        {t('disruptive_plataform', { ns: 'common' })}
+      </span>
       <DisruptiveContent>
-        <h2>
-          Disrupting Boundaries,
-          <br /> Empowering Ambitions
+        <h2
+          style={{
+            maxWidth: '22ch',
+          }}
+        >
+          {t('disruptive_title', { ns: 'common' })}
         </h2>
 
         <div
@@ -44,23 +52,15 @@ export function Disruptive() {
             gap: '1.25rem',
           }}
         >
-          <p>
-            Step into the future with SlatPay, the platform designed to
-            revolutionize your approach to{' '}
-            <span>
-              project management, product control, and financial transactions
-            </span>
-            . We merge innovative technology with user-friendly design,
-          </p>
-          <p>
-            Providing an efficient, comprehensive solution for producers,
-            co-producers, and customers alike. With SlatPay, you're not just
-            part of the digital transformation - you're leading it.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{ __html: t('disruptive_desc_part_1') }}
+          />
+          <p>{t('disruptive_desc_part_2')}</p>
         </div>
 
         <button onClick={() => router.push('/waitlist')}>
-          Get started <ArrowRight weight="bold" size={16} />
+          {t('get_started', { ns: 'common' })}{' '}
+          <ArrowRight weight="bold" size={16} />
         </button>
       </DisruptiveContent>
 

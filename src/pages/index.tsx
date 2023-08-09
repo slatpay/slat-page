@@ -15,6 +15,8 @@ import { Start } from '@/components/home/start'
 import { Footer } from '@/components/footer'
 import { useEffect, useRef, useState } from 'react'
 import { LoadingScreen } from '@/components/loadingscreen'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -25,8 +27,8 @@ const montserrat = Montserrat({
 export default function Home() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const feesRef = useRef<HTMLDivElement>(null)
-
   const [loaded, setLoaded] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,30 +43,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SlatPay - Your Reliable Payment Solution</title>
+        <title>{t('website_name')}</title>
         {/* Metatags padrão */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
-        <meta
-          name="description"
-          content="SlatPay offers seamless payment solutions for your business. Secure, reliable, and user-friendly."
-        />
-        <meta
-          name="keywords"
-          content="payment, online payment, payment gateway, secure payment, business payment"
-        />
+        <meta name="description" content={t('website_desc')} />
         <link rel="icon" href="/icon.ico" />
         {/* Open Graph Metatags (para o Facebook) */}
-        <meta
-          property="og:title"
-          content="SlatPay - Your Reliable Payment Solution"
-        />
-        <meta
-          property="og:description"
-          content="SlatPay offers seamless payment solutions for your business. Secure, reliable, and user-friendly."
-        />
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
         <meta property="og:image" content="/favicon.png" />
         {/* Imagem que você deseja mostrar quando compartilhada */}
         <meta property="og:url" content="https://slatpay.com" />
@@ -72,24 +61,15 @@ export default function Home() {
         <meta property="og:type" content="website" />
         {/* Metatags Twitter (para o Twitter) */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="SlatPay - Your Reliable Payment Solution"
-        />
-        <meta
-          name="twitter:description"
-          content="SlatPay offers seamless payment solutions for your business. Secure, reliable, and user-friendly."
-        />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
         <meta name="twitter:image" content="/favicon.png" />
         {/* Imagem que você deseja mostrar quando compartilhada */}
         <meta name="twitter:site" content="@slatpay" />
         {/* Seu identificador do Twitter */}
         <meta name="twitter:creator" content="@slatpay" />
         {/* Seu identificador do Twitter */}
-        <meta
-          name="keywords"
-          content="pagamento, serviço de pagamento, slatpay, soluções de pagamento"
-        />
+        <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
       </Head>
       <main className={montserrat.className}>
@@ -109,4 +89,12 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
 }

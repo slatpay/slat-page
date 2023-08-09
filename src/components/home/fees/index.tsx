@@ -6,6 +6,7 @@ import Link from 'next/link'
 import GraphGif from '@/assets/graph.gif'
 import RocketGif from '@/assets/rocket.gif'
 import { useInView } from 'react-intersection-observer'
+import { useTranslation } from 'next-i18next'
 
 interface FeesProps {
   feesRef: React.RefObject<HTMLDivElement>
@@ -16,6 +17,8 @@ export function Fees({ feesRef }: FeesProps) {
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
   })
+
+  const { t } = useTranslation()
 
   return (
     <FeesContainer
@@ -28,11 +31,7 @@ export function Fees({ feesRef }: FeesProps) {
     >
       <FeesContent ref={ref}>
         <FeesBox>
-          <h2>
-            Less Fees,
-            <br />
-            <span>More Profit</span>
-          </h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('less_fees') }} />
           <Image
             style={{
               maxWidth: '100%',
@@ -43,19 +42,14 @@ export function Fees({ feesRef }: FeesProps) {
             height={265}
           />
           <div>
-            <p>
-              Experience a game-changing <span>5% sales commission.</span> More
-              profit, less worry. Discover the SlatPay difference.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('less_fees_desc') }} />
             <Link href="/waitlist">
-              Start with SlatPay <ArrowRight />
+              {t('less_fees_footer')} <ArrowRight />
             </Link>
           </div>
         </FeesBox>
         <FeesBox>
-          <h2>
-            <span>Step into</span> Tomorrow
-          </h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('step_into') }} />
           <Image
             style={{
               maxWidth: '100%',
@@ -66,10 +60,7 @@ export function Fees({ feesRef }: FeesProps) {
             height={265}
           />
           <div>
-            <p>
-              SlatPay is more than a tool, it's a leap towards the future of
-              e-commerce and project management. <span>Stay tuned.</span>
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('step_into_desc') }} />
           </div>
         </FeesBox>
       </FeesContent>

@@ -15,6 +15,7 @@ import Dashboard from '@/assets/Dashboard.svg'
 import Cursor from '@/assets/Cursors.png'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 
 const createCells = (numCells: number) => {
   return Array(numCells).fill(null)
@@ -38,7 +39,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
 
   const numCellsHeight =
     typeof window !== 'undefined'
-      ? Math.floor((window.innerHeight * 1.5) / cellSize)
+      ? Math.floor((window.innerHeight * 2) / cellSize)
       : 0
 
   const numCells = numCellsWidth * numCellsHeight
@@ -62,6 +63,8 @@ export function Main({ featuresRef, feesRef }: MainProps) {
 
   const router = useRouter()
 
+  const { t } = useTranslation()
+
   return (
     <>
       <Header
@@ -81,17 +84,9 @@ export function Main({ featuresRef, feesRef }: MainProps) {
                 justifyContent: 'center',
               }}
             >
-              <h1>
-                Beyond Ordinary,
-                <br />
-                <span>Embrance Extraordinary</span>
-              </h1>
+              <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
 
-              <p>
-                Intrigued? Your success story starts here. Join our exclusive
-                <br />
-                waitlist to get a head start on a more streamlined future.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
             </div>
 
             <div
@@ -107,7 +102,8 @@ export function Main({ featuresRef, feesRef }: MainProps) {
                 variant="gradient"
                 size="lg"
               >
-                Open account <ArrowRight weight="bold" size={24} />
+                {t('open_account', { ns: 'common' })}{' '}
+                <ArrowRight weight="bold" size={24} />
               </Button>
               {/* <CalculateSavingButton>
                 Calculate your savings

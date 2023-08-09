@@ -4,14 +4,16 @@ import { StreamContainer, StreamContent } from './styles'
 import { ArrowRight } from 'phosphor-react'
 import { useInView } from 'react-intersection-observer'
 import SlatTv from '@/assets/slattv.svg'
-import SlatTv2 from '@/assets/slattv2.svg'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 export function Stream() {
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
   })
+
+  const { t } = useTranslation()
 
   return (
     <StreamContainer
@@ -32,19 +34,11 @@ export function Stream() {
         />
 
         <div>
-          <h2>
-            Unleash Your Knowledge, <span>Boost Your Revenue</span>
-          </h2>
-          <p>
-            With <span>SlatTV</span>, the innovative arm of SlatPay, host and
-            sell your infoproducts, eBooks, courses, and more. Transform your
-            wisdom into wealth on a{' '}
-            <span>platform designed for today's digital pioneers.</span> Elevate
-            your offerings, enrich others, and expand your possibilities.
-          </p>
+          <h2 dangerouslySetInnerHTML={{ __html: t('slattv_title') }} />
+          <p dangerouslySetInnerHTML={{ __html: t('slattv_desc') }} />
 
           <Link href="/#">
-            Learn more <ArrowRight size={16} weight="bold" />
+            {t('learn_more')} <ArrowRight size={16} weight="bold" />
           </Link>
         </div>
       </StreamContent>
@@ -65,23 +59,18 @@ export function Stream() {
             style={{
               textAlign: 'right',
             }}
-          >
-            A Guide to Creating and <span>Uploading Content</span>
-          </h2>
+            dangerouslySetInnerHTML={{
+              __html: t('slattv_guide_title'),
+            }}
+          />
           <p
             style={{
               textAlign: 'right',
             }}
-          >
-            Discover the potential of your expertise with SlatTV, the pioneering
-            platform from SlatPay. Designed for the digital trendsetters of
-            today, we provide a space to host, sell, and share your{' '}
-            <span>infoproducts, eBooks, courses</span>, and more. This guide
-            will walk you through the process of creating and uploading your
-            content, much like YouTube, but optimized for infoproducers. Learn
-            how to transform your wisdom into wealth, uplift your offerings,
-            empower others, and open up new possibilities.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('slattv_guide_desc'),
+            }}
+          />
         </div>
       </StreamContent>
     </StreamContainer>

@@ -46,6 +46,10 @@ export const FeesBox = styled('div', {
   background: '#fbfbfb',
   boxShadow: '0px -80px 120px 120px rgba(76, 86, 115, 0.10)',
 
+  '@media (max-width: 768px)': {
+    height: 'auto',
+  },
+
   h2: {
     fontSize: '3rem',
     fontWeight: 700,

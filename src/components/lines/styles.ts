@@ -21,8 +21,6 @@ export const Lines = styled('div', {
   backgroundRepeat: 'repeat-y',
 
   '@media (max-width: 768px)': {
-    height: '100vh',
-    maxWidth: '100vw',
-    backgroundSize: '100vw 100%',
+    display: 'none',
   },
 })

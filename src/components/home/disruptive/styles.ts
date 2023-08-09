@@ -87,9 +87,7 @@ export const DisruptiveImage = styled('div', {
   gap: '2.5rem',
 
   '@media (max-width: 768px)': {
-    flexDirection: 'column',
-    gap: '1rem',
-    padding: '0 1rem',
+    display: 'none',
   },
 
   img: {

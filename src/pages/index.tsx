@@ -72,7 +72,13 @@ export default function Home() {
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
       </Head>
-      <main className={montserrat.className}>
+      <main
+        style={{
+          overflow: 'hidden',
+          maxWidth: '100vw',
+        }}
+        className={montserrat.className}
+      >
         <Main featuresRef={featuresRef} feesRef={feesRef} />
         <Lines />
         <BrandsContainer>

@@ -13,6 +13,7 @@ import { useState } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import { ToastContainer, toast } from 'react-toastify'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const signup = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),

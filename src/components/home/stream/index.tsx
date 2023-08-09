@@ -19,7 +19,6 @@ export function Stream() {
     <StreamContainer
       css={{
         opacity: inView ? 1 : 0,
-        transform: inView ? 'translateX(0)' : 'translateX(30%)',
         transition: 'opacity 1s, transform 1s',
       }}
       ref={ref}

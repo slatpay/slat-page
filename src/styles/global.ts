@@ -11,7 +11,7 @@ export const globalStyles = globalCss({
     color: '$text',
     background:
       'linear-gradient(180deg, #F7F9FC 0%, #ECF1FF 99.99%, #ECF1FF 100%)',
-    overflowX: 'hidden',
+    // overflowX: 'hidden',
     maxWidth: '100vw',
 
     '-webkit-font-smoothing': 'antialiased',

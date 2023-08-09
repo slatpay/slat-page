@@ -27,6 +27,8 @@ export const FeaturesContainer = styled('div', {
 
   '@media (max-width: 768px)': {
     height: 'auto',
+    maxWidth: '100vw',
+    transform: 'rotate(0deg) !important',
   },
 })
 
@@ -57,6 +59,7 @@ export const FeaturesContent = styled('div', {
   '@media (max-width: 768px)': {
     maxWidth: '100%',
     padding: '2rem',
+    transform: 'rotate(0deg) !important',
   },
 
   '.tag': {

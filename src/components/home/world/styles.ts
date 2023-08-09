@@ -34,6 +34,11 @@ export const GlobalContainer = styled('div', {
     height: 40,
     zIndex: -1,
   },
+
+  '@media (max-width: 768px)': {
+    transform: 'rotate(0deg) !important',
+    maxWidth: '100vw',
+  },
 })
 
 export const GlobalContent = styled('div', {
@@ -49,6 +54,7 @@ export const GlobalContent = styled('div', {
 
   '@media (max-width: 768px)': {
     maxWidth: '100vw',
+    transform: 'rotate(0deg) !important',
     margin: '0 auto',
   },
 

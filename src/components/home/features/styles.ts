@@ -23,6 +23,10 @@ export const FeaturesContainer = styled('div', {
     width: 400,
     height: 40,
     zIndex: -1,
+
+    '@media (max-width: 768px)': {
+      width: '100%',
+    },
   },
 
   '@media (max-width: 768px)': {

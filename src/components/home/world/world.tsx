@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 import mapTexture from '@/assets/map.png'
 import { GlobeMethods } from 'react-globe.gl'
 import dynamic from 'next/dynamic'
@@ -75,17 +75,6 @@ const World = ({ width = 1300, height = 1300 }: Location) => {
     }
   })
 
-  const [countries, setCountries] = useState({ features: [] })
-
-  useEffect(() => {
-    // load data
-    fetch(
-      'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson',
-    )
-      .then((res) => res.json())
-      .then(setCountries)
-  }, [])
-
   return (
     <div
       style={{
@@ -104,9 +93,6 @@ const World = ({ width = 1300, height = 1300 }: Location) => {
         arcDashGap={() => Math.random()}
         arcAltitude={() => 0.5}
         arcDashAnimateTime={() => 5000}
-        hexPolygonsData={countries.features}
-        hexPolygonMargin={0.5} // d6iminuir para polígonos menores
-        hexPolygonColor={() => `#009ed88b`}
         width={width}
         height={height}
         animateIn={true}

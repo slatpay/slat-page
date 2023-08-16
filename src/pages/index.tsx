@@ -27,18 +27,7 @@ const montserrat = Montserrat({
 export default function Home() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const feesRef = useRef<HTMLDivElement>(null)
-  const [loaded, setLoaded] = useState(false)
   const { t } = useTranslation()
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true)
-    }, 450)
-  }, [])
-
-  if (!loaded) {
-    return <LoadingScreen />
-  }
 
   return (
     <>
@@ -71,6 +60,14 @@ export default function Home() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com" />
+
+        <link rel="alternate" hrefLang="en" href="https://slatpay.com/en" />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br"
+        />
 
         <script
           async

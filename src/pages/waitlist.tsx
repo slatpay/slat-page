@@ -14,6 +14,7 @@ import { gql, useMutation } from '@apollo/client'
 import { ToastContainer, toast } from 'react-toastify'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Head from 'next/head'
 
 const signup = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
@@ -105,6 +106,68 @@ export default function WaitList() {
 
   return (
     <>
+      <Head>
+        <title>Slatpay - Waitlist</title>
+        {/* Metatags padrão */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+        <meta name="description" content={t('website_desc')} />
+        <link rel="icon" href="/icon.ico" />
+        {/* Open Graph Metatags (para o Facebook) */}
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
+        <meta property="og:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta property="og:url" content="https://slatpay.com" />
+        {/* URL do site */}
+        <meta property="og:type" content="website" />
+        {/* Metatags Twitter (para o Twitter) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
+        <meta name="twitter:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta name="twitter:site" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="twitter:creator" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="keywords" content={t('website_tags')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com/waitlist" />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://slatpay.com/en/waitlist"
+        />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br/waitlist"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-808BW18WVQ');
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"
+        />
+      </Head>
+
       <WaitListContainer>
         <WaitListContent>
           <Image

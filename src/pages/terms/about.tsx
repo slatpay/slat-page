@@ -7,10 +7,76 @@ import {
   TermsContent,
 } from '@/styles/terms.styles'
 import Profile from '@/assets/fonseca.jpeg'
+import Head from 'next/head'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 export default function AboutUs() {
+  const { t } = useTranslation()
+
   return (
     <>
+      <Head>
+        <title>Slatpay - About Us</title>
+        {/* Metatags padrão */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+        <meta name="description" content={t('website_desc')} />
+        <link rel="icon" href="/icon.ico" />
+        {/* Open Graph Metatags (para o Facebook) */}
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
+        <meta property="og:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta property="og:url" content="https://slatpay.com" />
+        {/* URL do site */}
+        <meta property="og:type" content="website" />
+        {/* Metatags Twitter (para o Twitter) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
+        <meta name="twitter:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta name="twitter:site" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="twitter:creator" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="keywords" content={t('website_tags')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com/terms/about" />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://slatpay.com/en/terms/about"
+        />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br/terms/about"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-808BW18WVQ');
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"
+        />
+      </Head>
       <Header scrolled />
       <TermsContainer>
         <TermsContent>
@@ -27,12 +93,10 @@ export default function AboutUs() {
               textAlign: 'center',
               color: '#444',
             }}
-          >
-            These terms and conditions outline the rules and regulations for the
-            <br />
-            use of Slatpay's Website, located at{' '}
-            <span> https://slatpay.com.</span>
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('about_us_title'),
+            }}
+          />
 
           <p
             style={{
@@ -40,71 +104,10 @@ export default function AboutUs() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            <span>
-              Slatpay is more than just a platform, it's a community of
-              passionate creators, committed affiliates and avid learners.
-            </span>{' '}
-            We are a technology-driven company, striving to make the world of
-            digital products more accessible, efficient, and rewarding for
-            everyone involved.
-            <br />
-            <br />
-            As an innovative platform, we are focused on bridging the gap
-            between infoproducers, affiliates and buyers.{' '}
-            <span>
-              Our mission is to ease the process of digital product
-              commercialization
-            </span>
-            , ensuring it's carried out securely, seamlessly and providing an
-            exceptional user experience.
-            <br />
-            <br />
-            At Slatpay, we value the trust you place in us and our commitment to
-            our users is unwavering.{' '}
-            <span>
-              We constantly strive to adapt and innovate in response to the
-              needs of our ever-growing community,
-            </span>{' '}
-            paving the way for a future where digital commerce is open to all.
-            <br />
-            <br />
-            <span>How does Slatpay work?</span>
-            <br />
-            <br />
-            Slatpay operates by simplifying the transaction process between
-            infoproducers, affiliates and buyers. Whether you're an experienced
-            infoproducer, an ambitious affiliate, or a curious buyer,{' '}
-            <span>we've got you covered</span>.
-            <br />
-            Infoproducers: If you're a digital content creator, Slatpay is your
-            springboard to reach a larger audience. We handle all the
-            nitty-gritty of payment processing and technical support, freeing
-            you to <span>focus on what you do best - creating</span>.
-            <br />
-            Affiliates: If you have the skills to promote products and drive
-            sales, Slatpay is your stage. We provide an environment where you
-            can associate with products, earn commissions on your sales and{' '}
-            <span>grow your business</span>.
-            <br />
-            Buyers: If you're on the hunt for top-notch digital products,
-            Slatpay is your destination. We provide a{' '}
-            <span>
-              vast catalogue of products for you to peruse and purchase in a
-              secure and efficient manner
-            </span>
-            .
-            <br />
-            <br />
-            Beyond these roles, we value the sense of community at Slatpay. We
-            encourage collaboration, learning, and growth among our users.{' '}
-            <span>
-              At Slatpay, we aren't just building a platform, we're cultivating
-              an ecosystem where everyone can succeed.
-            </span>{' '}
-            So, join us at Slatpay and discover a better way to buy, sell and
-            learn about digital products!
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('about_us_desc'),
+            }}
+          />
 
           <div className="avatarColumns">
             <TermsAvatar
@@ -123,4 +126,12 @@ export default function AboutUs() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
 }

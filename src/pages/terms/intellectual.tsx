@@ -7,19 +7,86 @@ import {
   TermsContent,
 } from '@/styles/terms.styles'
 import Profile from '@/assets/fonseca.jpeg'
+import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export default function AboutUs() {
+export default function Intellectual() {
+  const { t } = useTranslation()
+
   return (
     <>
+      <Head>
+        <title>Slatpay - Intellectual</title>
+        {/* Metatags padrão */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+        <meta name="description" content={t('website_desc')} />
+        <link rel="icon" href="/icon.ico" />
+        {/* Open Graph Metatags (para o Facebook) */}
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
+        <meta property="og:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta property="og:url" content="https://slatpay.com" />
+        {/* URL do site */}
+        <meta property="og:type" content="website" />
+        {/* Metatags Twitter (para o Twitter) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
+        <meta name="twitter:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta name="twitter:site" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="twitter:creator" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="keywords" content={t('website_tags')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com/terms/intellectual" />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://slatpay.com/en/terms/intellectual"
+        />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br/terms/intellectual"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-808BW18WVQ');
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"
+        />
+      </Head>
       <Header scrolled />
       <TermsContainer>
         <TermsContent>
           <div />
 
-          <h1>
-            Intellectual Property Rights and User Content at{' '}
-            <span>Slatpay!</span>
-          </h1>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_title'),
+            }}
+          />
 
           <p
             style={{
@@ -27,19 +94,10 @@ export default function AboutUs() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            <span>Respect for Intellectual Property Rights</span>
-            <br />
-            At Slatpay, we recognize and respect all intellectual property
-            rights. All rights, titles and interests in and for the Slatpay
-            platform, including all text, graphics, images, music, software,
-            audio, video, authorship of any kind, and information and other
-            materials are exclusive property of Slatpay or our licensors. These
-            terms do not grant you any right, title or interest in any
-            Intellectual Property of Slatpay. Any use of Slatpay's Intellectual
-            Property, other than as expressly authorized by us, is strictly
-            prohibited.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_1'),
+            }}
+          />
 
           <p
             style={{
@@ -47,17 +105,10 @@ export default function AboutUs() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            <span>User Content Usage</span>
-            <br />
-            Slatpay allows users to post, send and share content on our
-            platform. Understand that by doing so, you grant Slatpay a global,
-            irrevocable, perpetual, non-exclusive, transferable, royalty-free
-            license, with the right to sublicense, use, view, copy, adapt,
-            modify, distribute, license, sell, transfer, publicly display,
-            publicly perform, transmit, stream, access, view and otherwise
-            exploit such User Content.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_2'),
+            }}
+          />
 
           <p
             style={{
@@ -65,14 +116,10 @@ export default function AboutUs() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            It's worth mentioning that Slatpay is not responsible for the
-            content posted by users and does not endorse any opinion contained
-            in the User Content. You are solely responsible for all and any
-            activities conducted through your account, and for the legality,
-            reliability, relevance and quality of the User Content you post on
-            Slatpay.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_3'),
+            }}
+          />
 
           <p
             style={{
@@ -80,11 +127,10 @@ export default function AboutUs() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            <span>Image Rights</span>
-            <br />
-            By accepting our Terms of Use, you grant Slatpay the right.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_4'),
+            }}
+          />
 
           <div className="avatarColumns">
             <TermsAvatar
@@ -103,4 +149,12 @@ export default function AboutUs() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
 }

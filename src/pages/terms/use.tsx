@@ -7,18 +7,86 @@ import {
   TermsContent,
 } from '@/styles/terms.styles'
 import Profile from '@/assets/fonseca.jpeg'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Head from 'next/head'
 
 export default function TermsOfUse() {
+  const { t } = useTranslation()
+
   return (
     <>
+      <Head>
+        <title>Slatpay - Terms of Use</title>
+        {/* Metatags padrão */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+        <meta name="description" content={t('website_desc')} />
+        <link rel="icon" href="/icon.ico" />
+        {/* Open Graph Metatags (para o Facebook) */}
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
+        <meta property="og:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta property="og:url" content="https://slatpay.com" />
+        {/* URL do site */}
+        <meta property="og:type" content="website" />
+        {/* Metatags Twitter (para o Twitter) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
+        <meta name="twitter:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta name="twitter:site" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="twitter:creator" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="keywords" content={t('website_tags')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com/terms/use" />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://slatpay.com/en/terms/use"
+        />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br/terms/use"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-808BW18WVQ');
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"
+        />
+      </Head>
       <Header scrolled />
       <TermsContainer>
         <TermsContent>
           <div />
 
-          <h1>
-            Understanding Our <span>Terms of Use</span>
-          </h1>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: t('terms_use_title'),
+            }}
+          />
           <p
             style={{
               fontSize: '1rem',
@@ -27,11 +95,10 @@ export default function TermsOfUse() {
               textAlign: 'center',
               color: '#444',
             }}
-          >
-            <span>Slatpay</span> believes in transparency and wants to ensure
-            that each user fully understands the terms and conditions that
-            govern our relationship. Here are the main things you need to know:
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('terms_use_subtitle'),
+            }}
+          />
 
           <p
             style={{
@@ -39,65 +106,10 @@ export default function TermsOfUse() {
               fontWeight: 400,
               lineHeight: '1.5rem',
             }}
-          >
-            <span>Acceptance of Terms:</span> By accessing and using the Slatpay
-            platform, you agree to our Terms of Use, Related Documents, and
-            Privacy Policy. This is the legal basis for our relationship with
-            you and it is important that you fully understand what this means.
-            We encourage each user to read these documents carefully before
-            starting to use our services.
-            <br />
-            <br />
-            <span>User Responsibilities:</span> As a Slatpay user, you have
-            significant responsibilities. These include complying with all
-            applicable laws and regulations, ensuring that all the information
-            you provide to us is true and accurate, and promising that you will
-            not use the platform for illegal or harmful activities. It is
-            crucial that you understand and follow these responsibilities to
-            maintain a safe and fair experience for everyone on the platform.
-            <br />
-            <br />
-            <span>Rights of Slatpay:</span> As the platform providing the
-            service, Slatpay has certain rights. This includes the right to
-            change the Terms of Use, suspend or terminate accounts if we believe
-            you are violating the Terms of Use, and conduct maintenance or
-            changes on the platform as needed to ensure its efficient operation.
-            <br />
-            <br />
-            Important: If you continue to use the platform after any changes to
-            the Terms of Use, this means that you accept and agree with these
-            changes.
-            <br />
-            <br />
-            <span>Respect for Privacy</span>
-            <br />
-            <br />
-            At Slatpay, the privacy of our users is a priority. We are committed
-            to protecting the information you share with us and use it
-            responsibly and in accordance with applicable data protection laws.
-            For more details on how we collect, store, and use your information,
-            please refer to our Privacy Policy.
-            <br />
-            <br />
-            <span>Responsibilities After Termination</span>
-            <br />
-            <br />
-            It is important to note that some obligations and responsibilities,
-            as described in our Terms of Use, will continue even after
-            termination, ending, or expiration of the contract. This is to
-            ensure that all parties are aware of their ongoing commitments and
-            that there is an appropriate closure of any activity on the
-            platform.
-            <br />
-            <br />
-            <span>Contact Us</span>
-            <br />
-            <br />
-            If you have questions, suggestions, or need clarification about our
-            Terms of Use, we are here to help. You can contact us by sending an
-            email to support@slatpay.com. We strive to respond to all inquiries
-            in a timely and comprehensive manner.
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: t('terms_use_desc'),
+            }}
+          />
 
           <div className="avatarColumns">
             <TermsAvatar
@@ -116,4 +128,12 @@ export default function TermsOfUse() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
 }

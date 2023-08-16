@@ -42,7 +42,12 @@ export function Main({ featuresRef, feesRef }: MainProps) {
       ? Math.floor((window.innerHeight * 1.8) / cellSize)
       : 0
 
-  const numCells = window.innerWidth < 800 ? 0 : numCellsWidth * numCellsHeight
+  const numCells =
+    typeof window !== 'undefined'
+      ? window.innerWidth < 800
+        ? 0
+        : numCellsWidth * numCellsHeight
+      : 0
   const cells = createCells(numCells)
 
   useEffect(() => {

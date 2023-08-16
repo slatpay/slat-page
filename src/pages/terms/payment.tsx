@@ -7,65 +7,88 @@ import {
   TermsContent,
 } from '@/styles/terms.styles'
 import Profile from '@/assets/fonseca.jpeg'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
 
 export default function Payments() {
+  const { t } = useTranslation()
+
   return (
     <>
+      <Head>
+        <title>Slatpay - Payments & Fees</title>
+        {/* Metatags padrão */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+        <meta name="description" content={t('website_desc')} />
+        <link rel="icon" href="/icon.ico" />
+        {/* Open Graph Metatags (para o Facebook) */}
+        <meta property="og:title" content={t('website_name')} />
+        <meta property="og:description" content={t('website_desc')} />
+        <meta property="og:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta property="og:url" content="https://slatpay.com" />
+        {/* URL do site */}
+        <meta property="og:type" content="website" />
+        {/* Metatags Twitter (para o Twitter) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('website_name')} />
+        <meta name="twitter:description" content={t('website_desc')} />
+        <meta name="twitter:image" content="/favicon.png" />
+        {/* Imagem que você deseja mostrar quando compartilhada */}
+        <meta name="twitter:site" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="twitter:creator" content="@slatpay" />
+        {/* Seu identificador do Twitter */}
+        <meta name="keywords" content={t('website_tags')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://slatpay.com/terms/payment" />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://slatpay.com/en/terms/payment"
+        />
+        <link
+          rel="alternate"
+          hrefLang="pt-BR"
+          href="https://slatpay.com/pt-br/terms/payment"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-808BW18WVQ');
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"
+        />
+      </Head>
       <Header scrolled />
       <TermsContainer>
         <TermsContent>
           <div />
           <h1>
-            <span>Payments and Fees</span>
+            <span>{t('payment_title')}</span>
           </h1>
           <p
             style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
-          >
-            <span>Payments</span>
-            <br />
-            <br />
-            Slatpay offers a variety of payment methods, including credit cards,
-            debit cards, and bank transfers, to provide the best possible
-            experience for our users. However, the availability of specific
-            payment methods may vary depending on certain factors such as your
-            location or the nature of the transaction.
-            <br />
-            <br />
-            <span>Transaction Fees</span>
-            <br />
-            <br />
-            To fund the provision of our services, Slatpay charges transaction
-            fees that are detailed in our fee policy. Please note that these
-            fees are applied to each transaction carried out through our
-            platform and are automatically deducted from the transaction amount.
-            <br />
-            <br />
-            <span>Refund Policy</span>
-            <br />
-            <br />
-            Slatpay understands that circumstances can change and, in certain
-            cases, a refund may be necessary. Our refund policy is designed to
-            be fair to both you and the infoproducers. However, the right to
-            request a refund may be limited or excluded in certain
-            circumstances.
-            <br />
-            <br />
-            <span>Payment Disputes</span>
-            <br />
-            <br />
-            If you have any issues with a transaction, Slatpay offers a dispute
-            process to help you resolve the issue. However, by using our
-            platform, you agree to first contact us to try to resolve the
-            dispute before resorting to your payment provider or bank.
-            <br />
-            <br />
-            Contact Us
-            <br />
-            <br />
-            If you have any questions, suggestions, or need more information
-            about our Payments and Fees terms, don't hesitate to contact us via
-            email at suporte@slatpay.com. We are always ready to assist you.
-          </p>
+            dangerouslySetInnerHTML={{ __html: t('payment_desc') }}
+          />
+
           <div className="avatarColumns">
             <TermsAvatar
               rounded
@@ -83,4 +106,12 @@ export default function Payments() {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
 }

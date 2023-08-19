@@ -82,6 +82,7 @@ export const MainContent = styled('div', {
 
   '@media (max-width: 768px)': {
     maxWidth: '100vw',
+    padding: '150px 0 0 0',
   },
 
   h1: {

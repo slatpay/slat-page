@@ -27,18 +27,7 @@ const montserrat = Montserrat({
 export default function Home() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const feesRef = useRef<HTMLDivElement>(null)
-  const [loaded, setLoaded] = useState(false)
   const { t } = useTranslation()
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true)
-    }, 450)
-  }, [])
-
-  if (!loaded) {
-    return <LoadingScreen />
-  }
 
   return (
     <>

@@ -45,7 +45,7 @@ export default function Payments() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com/terms/payment" />
+        <link rel="canonical" href="https://slatpay.com/en/terms/payment" />
 
         <link
           rel="alternate"

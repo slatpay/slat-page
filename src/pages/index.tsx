@@ -71,7 +71,7 @@ export default function Home() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com" />
+        <link rel="canonical" href="https://slatpay.com/en" />
 
         <link rel="alternate" hrefLang="en" href="https://slatpay.com/en" />
         <link

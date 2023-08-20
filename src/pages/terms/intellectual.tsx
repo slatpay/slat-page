@@ -45,7 +45,10 @@ export default function Intellectual() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com/terms/intellectual" />
+        <link
+          rel="canonical"
+          href="https://slatpay.com/en/terms/intellectual"
+        />
 
         <link
           rel="alternate"

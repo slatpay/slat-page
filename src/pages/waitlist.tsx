@@ -135,7 +135,7 @@ export default function WaitList() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com/waitlist" />
+        <link rel="canonical" href="https://slatpay.com/en/waitlist" />
 
         <link
           rel="alternate"

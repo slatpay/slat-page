@@ -45,9 +45,10 @@ export default function UserResponsibilities() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
+
         <link
           rel="canonical"
-          href="https://slatpay.com/terms/responsibilities"
+          href="https://slatpay.com/en/terms/responsibilities"
         />
 
         <link

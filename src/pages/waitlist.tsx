@@ -15,6 +15,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 const signup = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
@@ -34,6 +35,7 @@ export const SIGNUP_MUTATION = gql`
     $currency: String!
     $ipAddress: String!
     $location: String!
+    $referredByCode: String
   ) {
     signup(
       data: {
@@ -43,6 +45,7 @@ export const SIGNUP_MUTATION = gql`
         currency: $currency
         ipAddress: $ipAddress
         location: $location
+        referredByCode: $referredByCode
       }
     ) {
       status
@@ -58,6 +61,9 @@ export default function WaitList() {
     email: '',
     password: '',
   })
+
+  const router = useRouter()
+  const referredByCode = router.query.ref || ''
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -81,6 +87,7 @@ export default function WaitList() {
             currency: 'BRL',
             ipAddress: '0.0.0.0',
             location: 'Brazil',
+            referredByCode,
           },
         }),
         {

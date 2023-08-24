@@ -22,38 +22,38 @@ export const MainContainer = styled('div', {
     zIndex: 5,
   },
 
-  '.animatedRadius': {
-    position: 'absolute',
-    top: 0,
-    height: '100%',
-    width: '100%',
-    background:
-      'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
-    zIndex: 3,
-    transition: 'all 0.2s ease-in-out',
-    '-webkit-transition': 'all 0.2s ease-in-out',
-  },
+  // '.animatedRadius': {
+  //   position: 'absolute',
+  //   top: 0,
+  //   height: '100%',
+  //   width: '100%',
+  //   background:
+  //     'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
+  //   zIndex: 3,
+  //   transition: 'all 0.2s ease-in-out',
+  //   '-webkit-transition': 'all 0.2s ease-in-out',
+  // },
 })
 
-export const Cell = styled('div', {
-  height: '69px',
-  width: '69px',
-  outline: '1px solid rgba(255, 255, 255, .02)',
-  backgroundColor: '#00040B',
-  zIndex: 5,
-})
+// export const Cell = styled('div', {
+//   height: '69px',
+//   width: '69px',
+//   outline: '1px solid rgba(255, 255, 255, .02)',
+//   backgroundColor: '#00040B',
+//   zIndex: 5,
+// })
 
-export const Grid = styled('div', {
-  display: 'grid',
-  alignItems: 'center',
-  gap: '1px',
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100vw',
-  gridTemplateColumns: 'repeat(auto-fill, 70px)',
-  gridTemplateRows: 'repeat(auto-fill, 70px)',
-})
+// export const Grid = styled('div', {
+//   display: 'grid',
+//   alignItems: 'center',
+//   gap: '1px',
+//   position: 'absolute',
+//   top: 0,
+//   left: 0,
+//   width: '100vw',
+//   gridTemplateColumns: 'repeat(auto-fill, 70px)',
+//   gridTemplateRows: 'repeat(auto-fill, 70px)',
+// })
 
 const gradientAnimation = keyframes({
   '0%': {
@@ -125,7 +125,7 @@ export const MainContent = styled('div', {
   },
 })
 
-export const CalculateSavingButton = styled('button', {
+export const OpenAccountButton = styled('button', {
   display: 'flex',
   padding: '16px 20px',
   alignItems: 'center',
@@ -134,14 +134,12 @@ export const CalculateSavingButton = styled('button', {
   color: '#fff',
   gap: '10px',
   borderRadius: '4px',
-  border: '1px solid rgba(255, 255, 255, 0.13)',
-  background:
-    'radial-gradient(50% 50.00% at 50% 50.00%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%)',
+  background: 'linear-gradient(90deg, $slat-dark 0%, $slat-light 100%)',
+  opacity: 0.9,
   transition: 'all 0.2s ease-in-out',
 
   '&:hover': {
-    background:
-      'radial-gradient(50% 50.00% at 50% 50.00%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.20) 100%)',
+    opacity: 1,
   },
 })
 

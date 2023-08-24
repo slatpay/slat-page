@@ -1,13 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { Header } from '../../header'
 import {
-  // CalculateSavingButton,
-  Cell,
   DashboardImage,
-  Grid,
   MainContainer,
   MainContent,
   MiddleContent,
+  OpenAccountButton,
 } from './styles'
 import { Button } from '@slat-ui/react'
 import { ArrowRight } from 'phosphor-react'
@@ -24,7 +22,7 @@ interface MainProps {
 
 export function Main({ featuresRef, feesRef }: MainProps) {
   // const animatedRadiusRef = useRef<HTMLDivElement>(null)
-  // const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   // const cellSize = 90 // Tamanho da célula em pixels
   // const [numCellsWidth, setNumCellsWidth] = useState(0)
@@ -65,11 +63,11 @@ export function Main({ featuresRef, feesRef }: MainProps) {
   return (
     <>
       <Header
-        // mainRef={containerRef}
+        mainRef={containerRef}
         featuresRef={featuresRef}
         feesRef={feesRef}
       />
-      <MainContainer>
+      <MainContainer ref={containerRef}>
         <MainContent>
           <MiddleContent>
             <div
@@ -94,14 +92,10 @@ export function Main({ featuresRef, feesRef }: MainProps) {
                 justifyContent: 'center',
               }}
             >
-              <Button
-                onClick={() => router.push('/waitlist')}
-                variant="gradient"
-                size="lg"
-              >
+              <OpenAccountButton onClick={() => router.push('/waitlist')}>
                 {t('open_account', { ns: 'common' })}{' '}
                 <ArrowRight weight="bold" size={24} />
-              </Button>
+              </OpenAccountButton>
               {/* <CalculateSavingButton>
                 Calculate your savings
               </CalculateSavingButton> */}

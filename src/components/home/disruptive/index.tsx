@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import { useInView } from 'react-intersection-observer'
 import {
   DisruptiveContainer,
   DisruptiveContent,
@@ -16,24 +15,11 @@ import { useTranslation } from 'next-i18next'
 
 export function Disruptive() {
   const router = useRouter()
-  // const { ref, inView } = useInView({
-  //   triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
-  //   threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
-  // })
 
   const { t } = useTranslation()
 
   return (
-    <DisruptiveContainer
-      // ref={ref}
-      css={
-        {
-          // opacity: inView ? 1 : 0,
-          // transform: inView ? 'translateY(0)' : 'translateY(100px)',
-          // transition: 'opacity 1s, transform 1s',
-        }
-      }
-    >
+    <DisruptiveContainer>
       <span className="title">
         {t('disruptive_plataform', { ns: 'common' })}
       </span>

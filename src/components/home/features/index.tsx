@@ -21,7 +21,6 @@ import {
 } from 'phosphor-react'
 import { AccordionContentProps } from '@radix-ui/react-accordion'
 import React, { ForwardedRef } from 'react'
-import { useInView } from 'react-intersection-observer'
 import { useTranslation } from 'next-i18next'
 
 const accordionImg = (accordion: string) => {
@@ -46,27 +45,14 @@ interface FeaturesProps {
 }
 
 export function Features({ featuresRef }: FeaturesProps) {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
-  })
-
   const [accordion, setAccordion] = React.useState('item-1')
 
   const img = accordionImg(accordion)
   const { t } = useTranslation()
 
   return (
-    <FeaturesContainer
-      css={{
-        transform: inView
-          ? 'translateY(0) rotate(-2.551deg)'
-          : 'translateY(100px) rotate(-2.551deg)',
-        transition: 'opacity 1s, transform 1s',
-      }}
-      ref={featuresRef}
-    >
-      <FeaturesContent ref={ref}>
+    <FeaturesContainer>
+      <FeaturesContent ref={featuresRef}>
         <span className="tag">{t('manage_project')}</span>
         <h2 dangerouslySetInnerHTML={{ __html: t('features_title') }} />
         <p>{t('features_desc')}</p>

@@ -89,10 +89,9 @@ export default function Home() {
         {/* <Features featuresRef={featuresRef} />
         <Fees feesRef={feesRef} />
         <Icons />
-        <Global />
         <Stream />
         <Start />
-        <Footer /> */}
+      <Footer /> */}
         {/* <Main featuresRef={featuresRef} feesRef={feesRef} /> */}
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
@@ -101,6 +100,7 @@ export default function Home() {
         <Features featuresRef={featuresRef} />
         <Fees feesRef={feesRef} />
         <Icons />
+        <Global />
         <Stream />
         <Lines />
         <Start />

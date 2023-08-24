@@ -172,10 +172,7 @@ export const DashboardImage = styled('div', {
 
   '@media (max-width: 768px)': {
     img: {
-      maxWidth: '100%',
-      width: '100%',
-      height: 'auto',
-      objectFit: 'contain',
+      display: 'none',
     },
   },
 

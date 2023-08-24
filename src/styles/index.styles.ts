@@ -20,7 +20,6 @@ export const BrandsContainer = styled('div', {
   },
 
   img: {
-    width: '90%',
     objectFit: 'cover',
   },
 })

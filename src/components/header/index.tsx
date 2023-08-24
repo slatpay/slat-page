@@ -35,47 +35,44 @@ export function Header({
     })
   }
 
-  // const [isScrolledPastMain, setIsScrolledPastMain] = useState(false)
+  const [isScrolledPastMain, setIsScrolledPastMain] = useState(false)
 
-  // useEffect(() => {
-  //   const checkScroll = () => {
-  //     if (!mainRef) return
+  useEffect(() => {
+    const checkScroll = () => {
+      if (!mainRef) return
 
-  //     if (mainRef.current === null) return
+      if (mainRef.current === null) return
 
-  //     const mainBottomY = mainRef.current?.getBoundingClientRect().bottom + 800
-  //     if (mainBottomY !== undefined) {
-  //       setIsScrolledPastMain(window.scrollY > mainBottomY)
-  //     }
-  //   }
+      const mainBottomY = mainRef.current?.getBoundingClientRect().bottom + 800
+      if (mainBottomY !== undefined) {
+        setIsScrolledPastMain(window.scrollY > mainBottomY)
+      }
+    }
 
-  //   window.addEventListener('scroll', checkScroll)
-  //   return () => window.removeEventListener('scroll', checkScroll)
-  // }, [mainRef])
+    window.addEventListener('scroll', checkScroll)
+    return () => window.removeEventListener('scroll', checkScroll)
+  }, [mainRef])
 
   return (
     <HeaderContainer
-      css={
-        {
-          // backgroundColor:
-          // isScrolledPastMain || scrolled ? 'white' : 'transparent',
-        }
-      }
+      css={{
+        backgroundColor:
+          isScrolledPastMain || scrolled ? 'white' : 'transparent',
+      }}
     >
-      <HeaderContent isScrolled={false}>
+      <HeaderContent isScrolled={isScrolledPastMain || scrolled}>
         <div className="content">
           <Link href="/">
             <Image
-              style={
-                {
-                  // filter:
-                  // isScrolledPastMain || scrolled ? 'invert(1)' : 'invert(0)',
-                }
-              }
+              style={{
+                filter:
+                  isScrolledPastMain || scrolled ? 'invert(1)' : 'invert(0)',
+              }}
               src={SlatLogo}
               alt="Slatpay Logo"
               width={156}
               quality={80}
+              priority={true}
               height={70}
             />
           </Link>

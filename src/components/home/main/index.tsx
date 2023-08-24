@@ -116,19 +116,21 @@ export function Main({ featuresRef, feesRef }: MainProps) {
               quality={60}
               src={Cursor}
               alt="Cursor"
+              priority={true}
               width={1120}
               height={100}
             />
-            {/* <Image
+            <Image
               style={{
                 objectFit: 'contain',
               }}
-              quality={40}
+              quality={10}
               src={Dashboard}
               alt="Dashboard"
+              priority={true}
               width={1200}
               height={1120}
-            /> */}
+            />
           </DashboardImage>
         </MainContent>
         {/* <Grid>

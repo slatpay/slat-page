@@ -83,7 +83,7 @@ export default function Home() {
         <Main featuresRef={featuresRef} feesRef={feesRef} />
         <Lines />
         <BrandsContainer>
-          <Image src={Brands} alt="Brands" width={1120} height={35} />
+          <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>
         <Disruptive />
         {/*  <Features featuresRef={featuresRef} />

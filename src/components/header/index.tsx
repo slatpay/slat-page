@@ -71,6 +71,7 @@ export function Header({
               src={SlatLogo}
               alt="Slatpay Logo"
               width={156}
+              quality={80}
               height={70}
             />
           </Link>

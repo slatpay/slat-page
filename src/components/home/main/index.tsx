@@ -119,7 +119,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
               width={1120}
               height={100}
             />
-            <Image
+            {/* <Image
               style={{
                 objectFit: 'contain',
               }}
@@ -128,7 +128,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
               alt="Dashboard"
               width={1200}
               height={1120}
-            />
+            /> */}
           </DashboardImage>
         </MainContent>
         {/* <Grid>

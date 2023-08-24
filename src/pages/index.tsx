@@ -68,20 +68,6 @@ export default function Home() {
           href="https://slatpay.com/pt-br"
         />
 
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-808BW18WVQ"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-808BW18WVQ');
-            `,
-          }}
-        />
         <meta
           name="google-site-verification"
           content="-0u8A5IkWt-CC4Ol3tF3HSy392joLUPM3MujlTnIPoYo"

@@ -131,6 +131,7 @@ export default function Home() {
                   quality={60}
                   src={Cursor}
                   alt="Cursor"
+                  priority={true}
                   width={1120}
                   height={100}
                 />

@@ -38,23 +38,35 @@ export function Footer() {
             <h2>Terms</h2>
             <ul>
               <li>
-                <Link href="/terms/about">About Us</Link>
+                <Link aria-label="about us" href="/terms/about">
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link href="/terms/use">Terms of Use</Link>
+                <Link aria-label="terms of use" href="/terms/use">
+                  Terms of Use
+                </Link>
               </li>
               <li>
-                <Link href="/terms/responsibilities">
+                <Link
+                  aria-label="User Responsibilities"
+                  href="/terms/responsibilities"
+                >
                   User Responsibilities
                 </Link>
               </li>
               <li>
-                <Link href="/terms/intellectual">
+                <Link
+                  aria-label="Property Rights and User Content"
+                  href="/terms/intellectual"
+                >
                   Property Rights and User Content
                 </Link>
               </li>
               <li>
-                <Link href="/terms/payment">Payment and Fees</Link>
+                <Link aria-label="Payment and Fees" href="/terms/payment">
+                  Payment and Fees
+                </Link>
               </li>
             </ul>
           </div>
@@ -66,13 +78,19 @@ export function Footer() {
             </ul>
 
             <div className="social">
-              <Link href="#">
+              <Link aria-label="Slatpay instagram" href="#">
                 <InstagramLogo weight="fill" size={24} />
               </Link>
-              <Link href="https://twitter.com/slatpay#">
+              <Link
+                aria-label="Slatpay twitter"
+                href="https://twitter.com/slatpay#"
+              >
                 <TwitterLogo weight="fill" size={24} />
               </Link>
-              <Link href="https://linkedin.com/company/slatpay">
+              <Link
+                aria-label="Slatpay linkedin"
+                href="https://linkedin.com/company/slatpay"
+              >
                 <LinkedinLogo weight="fill" size={24} />
               </Link>
             </div>

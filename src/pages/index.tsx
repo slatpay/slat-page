@@ -80,17 +80,27 @@ export default function Home() {
         }}
         className={montserrat.className}
       >
-        <Main featuresRef={featuresRef} feesRef={feesRef} />
+        {/* <Main featuresRef={featuresRef} feesRef={feesRef} />
         <Lines />
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>
-        <Disruptive />
-        <Features featuresRef={featuresRef} />
+        <Disruptive /> */}
+        {/* <Features featuresRef={featuresRef} />
         <Fees feesRef={feesRef} />
         <Icons />
         <Global />
         <Stream />
+        <Start />
+        <Footer /> */}
+        <BrandsContainer>
+          <Image src={Brands} alt="Brands" width={925} height={35} />
+        </BrandsContainer>
+        <Features featuresRef={featuresRef} />
+        <Fees feesRef={feesRef} />
+        <Icons />
+        <Stream />
+        <Lines />
         <Start />
         <Footer />
       </main>

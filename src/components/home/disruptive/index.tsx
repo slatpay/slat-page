@@ -73,7 +73,7 @@ export function Disruptive() {
           style={{
             objectFit: 'cover',
           }}
-          quality={100}
+          quality={50}
           width={405}
           height={705}
         />
@@ -85,7 +85,7 @@ export function Disruptive() {
             style={{
               objectFit: 'cover',
             }}
-            quality={100}
+            quality={50}
             width={750}
             height={500}
           />
@@ -95,7 +95,7 @@ export function Disruptive() {
             style={{
               objectFit: 'cover',
             }}
-            quality={100}
+            quality={50}
             width={865}
             height={600}
           />

@@ -123,7 +123,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
               style={{
                 objectFit: 'contain',
               }}
-              quality={60}
+              quality={40}
               src={Dashboard}
               alt="Dashboard"
               width={1200}

@@ -22,38 +22,38 @@ export const MainContainer = styled('div', {
     zIndex: 5,
   },
 
-  // '.animatedRadius': {
-  //   position: 'absolute',
-  //   top: 0,
-  //   height: '100%',
-  //   width: '100%',
-  //   background:
-  //     'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
-  //   zIndex: 3,
-  //   transition: 'all 0.2s ease-in-out',
-  //   '-webkit-transition': 'all 0.2s ease-in-out',
-  // },
+  '.animatedRadius': {
+    position: 'absolute',
+    top: 0,
+    height: '100%',
+    width: '100%',
+    background:
+      'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
+    zIndex: 3,
+    transition: 'all 0.2s ease-in-out',
+    '-webkit-transition': 'all 0.2s ease-in-out',
+  },
 })
 
-// export const Cell = styled('div', {
-//   height: '69px',
-//   width: '69px',
-//   outline: '1px solid rgba(255, 255, 255, .02)',
-//   backgroundColor: '#00040B',
-//   zIndex: 5,
-// })
+export const Cell = styled('div', {
+  height: '69px',
+  width: '69px',
+  outline: '1px solid rgba(255, 255, 255, .02)',
+  backgroundColor: '#00040B',
+  zIndex: 5,
+})
 
-// export const Grid = styled('div', {
-//   display: 'grid',
-//   alignItems: 'center',
-//   gap: '1px',
-//   position: 'absolute',
-//   top: 0,
-//   left: 0,
-//   width: '100vw',
-//   gridTemplateColumns: 'repeat(auto-fill, 70px)',
-//   gridTemplateRows: 'repeat(auto-fill, 70px)',
-// })
+export const Grid = styled('div', {
+  display: 'grid',
+  alignItems: 'center',
+  gap: '1px',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100vw',
+  gridTemplateColumns: 'repeat(auto-fill, 70px)',
+  gridTemplateRows: 'repeat(auto-fill, 70px)',
+})
 
 const gradientAnimation = keyframes({
   '0%': {

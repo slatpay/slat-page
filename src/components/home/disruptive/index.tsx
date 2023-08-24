@@ -66,7 +66,7 @@ export function Disruptive() {
         </button>
       </DisruptiveContent>
 
-      <DisruptiveImage>
+      {/* <DisruptiveImage>
         <Image
           src={Disruptive2}
           alt=""
@@ -100,7 +100,7 @@ export function Disruptive() {
             height={600}
           />
         </div>
-      </DisruptiveImage>
+      </DisruptiveImage> */}
     </DisruptiveContainer>
   )
 }

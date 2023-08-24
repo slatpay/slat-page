@@ -36,6 +36,7 @@ const montserrat = Montserrat({
 export default function Home() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const feesRef = useRef<HTMLDivElement>(null)
+  const mainRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
   return (
@@ -90,13 +91,9 @@ export default function Home() {
         }}
         className={montserrat.className}
       >
-        <Header
-          // mainRef={containerRef}
-          featuresRef={featuresRef}
-          feesRef={feesRef}
-        />
+        <Header mainRef={mainRef} featuresRef={featuresRef} feesRef={feesRef} />
         <MainContainer>
-          <MainContent>
+          <MainContent mainRef={mainRef}>
             <MiddleContent>
               <div
                 style={{

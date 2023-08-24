@@ -5,18 +5,23 @@ import { ArrowRight } from 'phosphor-react'
 import { useTranslation } from 'next-i18next'
 
 export function Global() {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
+    threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
+  })
+
   const { t } = useTranslation()
 
   return (
     <GlobalContainer
       css={{
-        // opacity: inView ? 1 : 0,
-        // transform: inView
-        //   ? 'translateY(0) rotate(-2.551deg)'
-        //   : 'translateY(100px) rotate(-2.551deg)',
+        opacity: inView ? 1 : 0,
+        transform: inView
+          ? 'translateY(0) rotate(-2.551deg)'
+          : 'translateY(100px) rotate(-2.551deg)',
         transition: 'opacity 1s, transform 1s',
       }}
-      // ref={ref}
+      ref={ref}
     >
       <GlobalContent>
         <div

@@ -18,22 +18,20 @@ const GlobeWithNoSSR = dynamic(
   () =>
     import('react-globe.gl').then((mod) => {
       const Globe = mod.default
-      const GlobeWithRef = forwardRef<GlobeMethods | null, any>(
-        (props, ref) => {
-          const globeEl = useRef<GlobeMethods>()
+      const GlobeWithRef = forwardRef<GlobeMethods | null, any>((props) => {
+        const globeEl = useRef<GlobeMethods>()
 
-          // Aqui você pode usar useEffect.
-          useEffect(() => {
-            if (globeEl.current) {
-              globeEl.current.controls().autoRotate = true
-              globeEl.current.controls().autoRotateSpeed = 2
-              globeEl.current.controls().enableZoom = false
-            }
-          }, [globeEl])
+        // Aqui você pode usar useEffect.
+        useEffect(() => {
+          if (globeEl.current) {
+            globeEl.current.controls().autoRotate = true
+            globeEl.current.controls().autoRotateSpeed = 2
+            globeEl.current.controls().enableZoom = false
+          }
+        }, [globeEl])
 
-          return <Globe ref={globeEl} {...props} />
-        },
-      )
+        return <Globe ref={globeEl} {...props} />
+      })
       GlobeWithRef.displayName = 'GlobeWithRef'
       return GlobeWithRef
     }),

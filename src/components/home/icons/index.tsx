@@ -13,21 +13,21 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
 export function Icons() {
-  // const [ref, inView] = useInView({
-  //   triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
-  //   threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
-  // })
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
+    threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
+  })
 
   const { t } = useTranslation()
 
   return (
     <IconsContainer
       css={{
-        // opacity: inView ? 1 : 0,
-        // transform: inView ? 'translateY(0)' : 'translateY(100px)',
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(100px)',
         transition: 'opacity 1s, transform 1s',
       }}
-      // ref={ref}
+      ref={ref}
     >
       <IconsContent>
         <h2 dangerouslySetInnerHTML={{ __html: t('icons_title') }} />

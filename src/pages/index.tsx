@@ -1,5 +1,4 @@
 import { Montserrat } from 'next/font/google'
-import { Main } from '@/components/home/main'
 import { Lines } from '@/components/lines/styles'
 import Brands from '@/assets/Brands.png'
 import Image from 'next/image'
@@ -18,12 +17,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
 import {
+  DashboardImage,
   MainContainer,
   MainContent,
   MiddleContent,
   OpenAccountButton,
 } from '@/components/home/main/styles'
 import { ArrowRight } from 'phosphor-react'
+import Dashboard from '@/assets/Dashboard.svg'
+import Cursor from '@/assets/Cursors.png'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -123,6 +125,30 @@ export default function Home() {
                   <ArrowRight weight="bold" size={24} />
                 </OpenAccountButton>
               </div>
+
+              <DashboardImage>
+                <Image
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                  quality={60}
+                  src={Cursor}
+                  alt="Cursor"
+                  width={1120}
+                  height={100}
+                />
+                <Image
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                  quality={60}
+                  src={Dashboard}
+                  alt="Dashboard"
+                  priority={true}
+                  width={1200}
+                  height={1120}
+                />
+              </DashboardImage>
             </MiddleContent>
           </MainContent>
         </MainContainer>

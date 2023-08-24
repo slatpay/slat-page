@@ -7,7 +7,6 @@ import {
   MiddleContent,
   OpenAccountButton,
 } from './styles'
-import { Button } from '@slat-ui/react'
 import { ArrowRight } from 'phosphor-react'
 import Dashboard from '@/assets/Dashboard.svg'
 import Cursor from '@/assets/Cursors.png'

@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useRef } from 'react'
-import mapTexture from '@/assets/map.png'
+import mapTexture from '@/assets/map.jpg'
 import { GlobeMethods } from 'react-globe.gl'
 import dynamic from 'next/dynamic'
 

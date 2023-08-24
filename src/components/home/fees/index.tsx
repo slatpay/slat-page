@@ -38,8 +38,7 @@ export function Fees({ feesRef }: FeesProps) {
             }}
             src={GraphGif}
             alt="Fees"
-            quality={80}
-            priority={true}
+            quality={60}
             width={355}
             height={265}
           />
@@ -58,7 +57,7 @@ export function Fees({ feesRef }: FeesProps) {
             }}
             src={RocketGif}
             alt="Fees"
-            quality={80}
+            quality={60}
             priority={true}
             width={355}
             height={265}

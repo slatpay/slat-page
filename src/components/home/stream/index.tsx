@@ -2,26 +2,26 @@
 import Link from 'next/link'
 import { StreamContainer, StreamContent } from './styles'
 import { ArrowRight } from 'phosphor-react'
-import { useInView } from 'react-intersection-observer'
+// import { useInView } from 'react-intersection-observer'
 import SlatTv from '@/assets/slattv.svg'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
 export function Stream() {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
-  })
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view.
+  //   threshold: 0.1, // Percentage of the element that is in view before the callback triggers.
+  // })
 
   const { t } = useTranslation()
 
   return (
     <StreamContainer
       css={{
-        opacity: inView ? 1 : 0,
+        // opacity: inView ? 1 : 0,
         transition: 'opacity 1s, transform 1s',
       }}
-      ref={ref}
+      // ref={ref}
     >
       <StreamContent direction="inverse">
         <Image

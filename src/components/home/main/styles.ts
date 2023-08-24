@@ -126,14 +126,17 @@ export const MainContent = styled('div', {
 })
 
 export const OpenAccountButton = styled('button', {
+  all: 'unset',
   display: 'flex',
-  padding: '16px 20px',
+  height: 52,
+  padding: '0 2.5rem',
   alignItems: 'center',
   fontWeight: 700,
   cursor: 'pointer',
   color: '#fff',
   gap: '10px',
-  borderRadius: '4px',
+  border: 0,
+  borderRadius: '$md',
   background: 'linear-gradient(90deg, $slat-dark 0%, $slat-light 100%)',
   opacity: 0.9,
   transition: 'all 0.2s ease-in-out',

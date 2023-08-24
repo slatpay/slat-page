@@ -1,4 +1,5 @@
 import { keyframes, styled } from '@/styles/stitches.config'
+import Link from 'next/link'
 
 export const MainContainer = styled('div', {
   width: '100vw',
@@ -125,7 +126,7 @@ export const MainContent = styled('div', {
   },
 })
 
-export const OpenAccountButton = styled('button', {
+export const OpenAccountButton = styled(Link, {
   all: 'unset',
   display: 'flex',
   height: 52,

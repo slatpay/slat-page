@@ -70,38 +70,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
       />
       <MainContainer>
         <MainContent>
-          <MiddleContent>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.25rem',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
-
-              <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
-            </div>
-
-            <div
-              style={{
-                display: 'flex',
-                gap: '1rem',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <OpenAccountButton onClick={() => router.push('/waitlist')}>
-                {t('open_account', { ns: 'common' })}{' '}
-                <ArrowRight weight="bold" size={24} />
-              </OpenAccountButton>
-              {/* <CalculateSavingButton>
-                Calculate your savings
-              </CalculateSavingButton> */}
-            </div>
-          </MiddleContent>
+          <MiddleContent></MiddleContent>
 
           {/* <DashboardImage>
             <Image

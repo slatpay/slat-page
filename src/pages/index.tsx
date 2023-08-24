@@ -118,7 +118,7 @@ export default function Home() {
                   justifyContent: 'center',
                 }}
               >
-                <OpenAccountButton onClick={() => router.push('/waitlist')}>
+                <OpenAccountButton href="/waitlist">
                   {t('open_account', { ns: 'common' })}{' '}
                   <ArrowRight weight="bold" size={24} />
                 </OpenAccountButton>

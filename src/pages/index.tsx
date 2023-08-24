@@ -95,7 +95,7 @@ export default function Home() {
         <MainContainer>
           <MainContent ref={mainRef}>
             <MiddleContent>
-              <div
+              {/* <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -121,7 +121,7 @@ export default function Home() {
                   {t('open_account', { ns: 'common' })}{' '}
                   <ArrowRight weight="bold" size={24} />
                 </OpenAccountButton>
-              </div>
+              </div> */}
 
               {/* <DashboardImage>
                 <Image

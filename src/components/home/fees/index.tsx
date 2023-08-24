@@ -58,7 +58,6 @@ export function Fees({ feesRef }: FeesProps) {
             src={RocketGif}
             alt="Fees"
             quality={60}
-            priority={true}
             width={355}
             height={265}
           />

@@ -64,7 +64,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
   return (
     <>
       <Header
-        mainRef={containerRef}
+        // mainRef={containerRef}
         featuresRef={featuresRef}
         feesRef={feesRef}
       />

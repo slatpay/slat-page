@@ -15,7 +15,7 @@ export const BrandsContainer = styled('div', {
   },
 
   // min tablet, max screen
-  '@media (min-width: 768px) and (max-width: 1300px)': {
+  '@media (min-width: 768px) and (max-width: 1500px)': {
     marginTop: '600px',
   },
 

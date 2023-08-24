@@ -154,18 +154,6 @@ export const MiddleContent = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   position: 'relative',
-
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: '50%',
-    width: '100%',
-    height: 70,
-    borderRadius: '740px',
-    background:
-      'linear-gradient(88deg, rgba(0, 160, 216, 0.50) 0%, rgba(4, 0, 206, 0.50) 100%)',
-    filter: 'blur(100px)',
-  },
 })
 
 export const DashboardImage = styled('div', {

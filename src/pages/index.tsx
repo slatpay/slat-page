@@ -93,7 +93,7 @@ export default function Home() {
       >
         <Header mainRef={mainRef} featuresRef={featuresRef} feesRef={feesRef} />
         <MainContainer>
-          <MainContent mainRef={mainRef}>
+          <MainContent ref={mainRef}>
             <MiddleContent>
               <div
                 style={{

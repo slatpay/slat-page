@@ -65,11 +65,11 @@ export function Main({ featuresRef, feesRef }: MainProps) {
   return (
     <>
       <Header
-        mainRef={containerRef}
+        // mainRef={containerRef}
         featuresRef={featuresRef}
         feesRef={feesRef}
       />
-      <MainContainer ref={containerRef}>
+      <MainContainer>
         <MainContent>
           <MiddleContent>
             <div
@@ -138,7 +138,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
             <Cell key={index} />
           ))}
         </Grid> */}
-        <div className="animatedRadius" ref={animatedRadiusRef} />
+        {/* <div className="animatedRadius" ref={animatedRadiusRef} /> */}
       </MainContainer>
     </>
   )

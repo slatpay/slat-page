@@ -123,7 +123,7 @@ export default function Home() {
                 </OpenAccountButton>
               </div>
 
-              <DashboardImage>
+              {/* <DashboardImage>
                 <Image
                   style={{
                     objectFit: 'contain',
@@ -146,7 +146,7 @@ export default function Home() {
                   width={1200}
                   height={1120}
                 />
-              </DashboardImage>
+              </DashboardImage> */}
             </MiddleContent>
           </MainContent>
         </MainContainer>

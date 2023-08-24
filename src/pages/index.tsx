@@ -92,7 +92,7 @@ export default function Home() {
         <Stream />
         <Start />
       <Footer /> */}
-        {/* <Main featuresRef={featuresRef} feesRef={feesRef} /> */}
+        <Main featuresRef={featuresRef} feesRef={feesRef} />
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>

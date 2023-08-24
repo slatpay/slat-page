@@ -63,11 +63,11 @@ export function Main({ featuresRef, feesRef }: MainProps) {
 
   return (
     <>
-      {/* <Header
+      <Header
         mainRef={containerRef}
         featuresRef={featuresRef}
         feesRef={feesRef}
-      /> */}
+      />
       <MainContainer>
         <MainContent>
           <MiddleContent>
@@ -103,7 +103,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
             </div>
           </MiddleContent>
 
-          <DashboardImage>
+          {/* <DashboardImage>
             <Image
               style={{
                 objectFit: 'contain',
@@ -126,7 +126,7 @@ export function Main({ featuresRef, feesRef }: MainProps) {
               width={1200}
               height={1120}
             />
-          </DashboardImage>
+          </DashboardImage> */}
         </MainContent>
         {/* <Grid>
           {Array.from(Array(numCells).keys()).map((cell, index) => (

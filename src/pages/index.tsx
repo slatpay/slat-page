@@ -17,7 +17,13 @@ import { useRef } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
-import { MainContainer } from '@/components/home/main/styles'
+import {
+  MainContainer,
+  MainContent,
+  MiddleContent,
+  OpenAccountButton,
+} from '@/components/home/main/styles'
+import { ArrowRight } from 'phosphor-react'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -87,7 +93,39 @@ export default function Home() {
           featuresRef={featuresRef}
           feesRef={feesRef}
         />
-        <MainContainer></MainContainer>
+        <MainContainer>
+          <MainContent>
+            <MiddleContent>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1.25rem',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
+
+                <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
+              </div>
+
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '1rem',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <OpenAccountButton onClick={() => router.push('/waitlist')}>
+                  {t('open_account', { ns: 'common' })}{' '}
+                  <ArrowRight weight="bold" size={24} />
+                </OpenAccountButton>
+              </div>
+            </MiddleContent>
+          </MainContent>
+        </MainContainer>
 
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />

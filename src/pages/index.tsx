@@ -16,6 +16,8 @@ import { Footer } from '@/components/footer'
 import { useRef } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import { Header } from '@/components/header'
+import { MainContainer } from '@/components/home/main/styles'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -80,19 +82,13 @@ export default function Home() {
         }}
         className={montserrat.className}
       >
-        {/* <Main featuresRef={featuresRef} feesRef={feesRef} />
-        <Lines />
-        <BrandsContainer>
-          <Image src={Brands} alt="Brands" width={925} height={35} />
-        </BrandsContainer>
-        <Disruptive /> */}
-        {/* <Features featuresRef={featuresRef} />
-        <Fees feesRef={feesRef} />
-        <Icons />
-        <Stream />
-        <Start />
-      <Footer /> */}
-        <Main featuresRef={featuresRef} feesRef={feesRef} />
+        <Header
+          // mainRef={containerRef}
+          featuresRef={featuresRef}
+          feesRef={feesRef}
+        />
+        <MainContainer></MainContainer>
+
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>

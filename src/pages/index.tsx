@@ -39,8 +39,6 @@ export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
-
   return (
     <>
       <Head>
@@ -125,32 +123,30 @@ export default function Home() {
                 </OpenAccountButton>
               </div>
 
-              {!isMobile && (
-                <DashboardImage>
-                  <Image
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                    quality={60}
-                    src={Cursor}
-                    alt="Cursor"
-                    priority={true}
-                    width={1120}
-                    height={100}
-                  />
-                  <Image
-                    style={{
-                      objectFit: 'contain',
-                    }}
-                    quality={60}
-                    src={Dashboard}
-                    alt="Dashboard"
-                    priority={true}
-                    width={1200}
-                    height={1120}
-                  />
-                </DashboardImage>
-              )}
+              <DashboardImage>
+                <Image
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                  quality={60}
+                  src={Cursor}
+                  alt="Cursor"
+                  priority={true}
+                  width={1120}
+                  height={100}
+                />
+                <Image
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                  quality={60}
+                  src={Dashboard}
+                  alt="Dashboard"
+                  priority={true}
+                  width={1200}
+                  height={1120}
+                />
+              </DashboardImage>
             </MiddleContent>
           </MainContent>
         </MainContainer>

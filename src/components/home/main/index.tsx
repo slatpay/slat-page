@@ -131,11 +131,11 @@ export function Main({ featuresRef, feesRef }: MainProps) {
             />
           </DashboardImage>
         </MainContent>
-        <Grid>
+        {/* <Grid>
           {Array.from(Array(numCells).keys()).map((cell, index) => (
             <Cell key={index} />
           ))}
-        </Grid>
+        </Grid> */}
         <div className="animatedRadius" ref={animatedRadiusRef} />
       </MainContainer>
     </>

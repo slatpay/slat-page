@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-// import { useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 import {
   DisruptiveContainer,
   DisruptiveContent,
@@ -66,14 +66,15 @@ export function Disruptive() {
         </button>
       </DisruptiveContent>
 
-      {/* <DisruptiveImage>
+      <DisruptiveImage>
         <Image
           src={Disruptive2}
           alt=""
           style={{
             objectFit: 'cover',
           }}
-          quality={50}
+          priority={true}
+          quality={100}
           width={405}
           height={705}
         />
@@ -85,7 +86,8 @@ export function Disruptive() {
             style={{
               objectFit: 'cover',
             }}
-            quality={50}
+            priority={true}
+            quality={100}
             width={750}
             height={500}
           />
@@ -95,12 +97,13 @@ export function Disruptive() {
             style={{
               objectFit: 'cover',
             }}
-            quality={50}
+            priority={true}
+            quality={100}
             width={865}
             height={600}
           />
         </div>
-      </DisruptiveImage> */}
+      </DisruptiveImage>
     </DisruptiveContainer>
   )
 }

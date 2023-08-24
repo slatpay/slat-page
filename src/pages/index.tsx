@@ -86,12 +86,12 @@ export default function Home() {
           <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>
         <Disruptive />
-        {/*  <Features featuresRef={featuresRef} />
+        <Features featuresRef={featuresRef} />
         <Fees feesRef={feesRef} />
         <Icons />
         <Global />
         <Stream />
-        <Start /> */}
+        <Start />
         <Footer />
       </main>
     </>

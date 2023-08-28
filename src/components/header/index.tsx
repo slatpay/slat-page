@@ -88,7 +88,7 @@ export function Header({
                 {t('features', { ns: 'common' })}
               </button>
             )}
-            {/* <Link href="/faq">FAQ</Link> */}
+            <Link href="https://faq.slatpay.com/">FAQ</Link>
             {feesRef && (
               <button onClick={() => goToRef(feesRef)}>
                 {t('fees', { ns: 'common' })}

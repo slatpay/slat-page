@@ -60,7 +60,7 @@ export function Disruptive() {
             objectFit: 'cover',
           }}
           priority={true}
-          quality={100}
+          quality={65}
           width={405}
           height={705}
         />
@@ -73,7 +73,7 @@ export function Disruptive() {
               objectFit: 'cover',
             }}
             priority={true}
-            quality={100}
+            quality={65}
             width={750}
             height={500}
           />
@@ -84,7 +84,7 @@ export function Disruptive() {
               objectFit: 'cover',
             }}
             priority={true}
-            quality={100}
+            quality={65}
             width={865}
             height={600}
           />

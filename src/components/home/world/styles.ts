@@ -18,8 +18,6 @@ export const GlobalContainer = styled('div', {
   maxHeight: 750,
   background: 'radial-gradient(50% 50% at 50% 50%, #16223A 0%, #030D21 100%)',
   boxShadow: '0px -32px 45px 0px rgba(0, 0, 0, 0.18)',
-  position: 'relative',
-  zIndex: 10,
   transform: 'rotate(-2.551deg)',
   marginLeft: '-10vw',
   overflow: 'hidden',

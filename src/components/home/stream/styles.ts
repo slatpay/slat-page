@@ -4,8 +4,6 @@ export const StreamContainer = styled('div', {
   width: '100%',
   maxWidth: 1120,
   margin: '10rem auto',
-  position: 'relative',
-  zIndex: 10,
 
   '@media (max-width: 768px)': {
     maxWidth: '100vw',

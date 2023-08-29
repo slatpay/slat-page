@@ -17,8 +17,6 @@ export const StartContainer = styled('div', {
   maxWidth: 875,
   height: 495,
   margin: '0 auto',
-  position: 'relative',
-  zIndex: 10,
   background: '#000',
 
   '@media (max-width: 768px)': {

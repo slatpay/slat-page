@@ -4,8 +4,6 @@ export const DisruptiveContainer = styled('div', {
   width: '100%',
   maxWidth: '1120px',
   margin: '130px auto',
-  position: 'relative',
-  zIndex: 2,
 
   '.title': {
     padding: '0 1rem',

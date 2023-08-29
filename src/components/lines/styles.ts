@@ -8,7 +8,7 @@ export const Lines = styled('div', {
   top: 0,
   left: '50%',
   transform: 'translateX(-50%)',
-  zIndex: 1,
+  zIndex: -1,
 
   backgroundImage: `
   linear-gradient(to right, transparent calc(223px * 0), #97ABB130 calc(223px * 0), #97ABB130 calc(223px * 0 + 1px), transparent calc(223px * 0 + 1px)),

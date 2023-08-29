@@ -5,8 +5,6 @@ export const MainContainer = styled('div', {
   width: '100vw',
   height: '155vh',
   background: '#00040B',
-  position: 'relative',
-  zIndex: 2,
 
   '@media (max-width: 768px)': {
     height: '100vh',
@@ -20,7 +18,6 @@ export const MainContainer = styled('div', {
     width: '100%',
     background:
       'radial-gradient(ellipse at center, #00040B00 15%, #00040B 100%)',
-    zIndex: 5,
   },
 
   '.animatedRadius': {
@@ -30,7 +27,6 @@ export const MainContainer = styled('div', {
     width: '100%',
     background:
       'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
-    zIndex: 3,
     transition: 'all 0.2s ease-in-out',
     '-webkit-transition': 'all 0.2s ease-in-out',
   },
@@ -41,7 +37,7 @@ export const Cell = styled('div', {
   width: '69px',
   outline: '1px solid rgba(255, 255, 255, .02)',
   backgroundColor: '#00040B',
-  zIndex: 5,
+  zIndex: 1,
 })
 
 export const Grid = styled('div', {
@@ -79,7 +75,7 @@ export const MainContent = styled('div', {
   padding: '265px 0 0 0',
   gap: '2rem',
   position: 'relative',
-  zIndex: 10,
+  zIndex: 2,
 
   '@media (max-width: 768px)': {
     maxWidth: '100vw',
@@ -153,7 +149,6 @@ export const MiddleContent = styled('div', {
   gap: '2.5rem',
   alignItems: 'center',
   justifyContent: 'center',
-  position: 'relative',
 })
 
 export const DashboardImage = styled('div', {

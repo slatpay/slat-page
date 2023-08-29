@@ -26,6 +26,7 @@ import {
 import { ArrowRight } from 'phosphor-react'
 import Dashboard from '@/assets/Dashboard.svg'
 import Cursor from '@/assets/Cursors.png'
+import { Main } from '@/components/home/main'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -92,64 +93,7 @@ export default function Home() {
         className={montserrat.className}
       >
         <Header mainRef={mainRef} featuresRef={featuresRef} feesRef={feesRef} />
-        <MainContainer>
-          <MainContent ref={mainRef}>
-            <MiddleContent>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
-
-                <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
-              </div>
-
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '1rem',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <OpenAccountButton href="/waitlist">
-                  {t('open_account', { ns: 'common' })}{' '}
-                  <ArrowRight weight="bold" size={24} />
-                </OpenAccountButton>
-              </div>
-
-              <DashboardImage>
-                <Image
-                  style={{
-                    objectFit: 'contain',
-                  }}
-                  quality={60}
-                  src={Cursor}
-                  alt="Cursor"
-                  priority={true}
-                  width={1120}
-                  height={100}
-                />
-                <Image
-                  style={{
-                    objectFit: 'contain',
-                  }}
-                  quality={60}
-                  src={Dashboard}
-                  alt="Dashboard"
-                  priority={true}
-                  width={1200}
-                  height={1120}
-                />
-              </DashboardImage>
-            </MiddleContent>
-          </MainContent>
-        </MainContainer>
+        <Main mainRef={mainRef} />
 
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />

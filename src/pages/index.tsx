@@ -16,16 +16,6 @@ import { useRef } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
-import {
-  DashboardImage,
-  MainContainer,
-  MainContent,
-  MiddleContent,
-  OpenAccountButton,
-} from '@/components/home/main/styles'
-import { ArrowRight } from 'phosphor-react'
-import Dashboard from '@/assets/Dashboard.svg'
-import Cursor from '@/assets/Cursors.png'
 import { Main } from '@/components/home/main'
 
 const montserrat = Montserrat({

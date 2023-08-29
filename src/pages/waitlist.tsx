@@ -111,6 +111,13 @@ export default function WaitList() {
 
   const { t } = useTranslation()
 
+  const currentLocale = router.locale
+  const defaultLocale = router.defaultLocale
+
+  const canonicalURL = `https://slatpay.com/${
+    currentLocale === defaultLocale ? '' : currentLocale
+  }/waitlist`
+
   return (
     <>
       <Head>
@@ -142,8 +149,12 @@ export default function WaitList() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com/en/waitlist" />
-
+        <link rel="canonical" href={canonicalURL} />
+        <link
+          rel="alternate"
+          href="https://slatpay.com/waitlist"
+          hrefLang="x-default"
+        />
         <link
           rel="alternate"
           hrefLang="en"

@@ -17,6 +17,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
 import { Main } from '@/components/home/main'
+import { useRouter } from 'next/router'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -29,6 +30,14 @@ export default function Home() {
   const feesRef = useRef<HTMLDivElement>(null)
   const mainRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation()
+
+  const router = useRouter()
+  const currentLocale = router.locale
+  const defaultLocale = router.defaultLocale
+
+  const canonicalURL = `https://slatpay.com/${
+    currentLocale === defaultLocale ? '' : currentLocale
+  }`
 
   return (
     <>
@@ -61,9 +70,14 @@ export default function Home() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://slatpay.com/en" />
+        <link rel="canonical" href={canonicalURL} />
 
         <link rel="alternate" hrefLang="en" href="https://slatpay.com/en" />
+        <link
+          rel="alternate"
+          href="https://slatpay.com/"
+          hrefLang="x-default"
+        />
         <link
           rel="alternate"
           hrefLang="pt-BR"
@@ -84,7 +98,6 @@ export default function Home() {
       >
         <Header mainRef={mainRef} featuresRef={featuresRef} feesRef={feesRef} />
         <Main mainRef={mainRef} />
-
         <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
         </BrandsContainer>

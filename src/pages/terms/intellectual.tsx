@@ -10,9 +10,18 @@ import Profile from '@/assets/fonseca.jpeg'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
 
 export default function Intellectual() {
   const { t } = useTranslation()
+
+  const router = useRouter()
+  const currentLocale = router.locale
+  const defaultLocale = router.defaultLocale
+
+  const canonicalURL = `https://slatpay.com/${
+    currentLocale === defaultLocale ? '' : currentLocale
+  }/terms/intellectual`
 
   return (
     <>
@@ -45,15 +54,17 @@ export default function Intellectual() {
         {/* Seu identificador do Twitter */}
         <meta name="keywords" content={t('website_tags')} />
         <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://slatpay.com/en/terms/intellectual"
-        />
+        <link rel="canonical" href={canonicalURL} />
 
         <link
           rel="alternate"
           hrefLang="en"
           href="https://slatpay.com/en/terms/intellectual"
+        />
+        <link
+          rel="alternate"
+          href="https://slatpay.com/terms/intellectual"
+          hrefLang="x-default"
         />
         <link
           rel="alternate"

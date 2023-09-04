@@ -49,7 +49,6 @@ export const SIGNUP_MUTATION = gql`
       }
     ) {
       status
-      token
     }
   }
 `

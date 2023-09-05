@@ -1,10 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { FeesBox, FeesContainer, FeesContent } from './styles'
 import { ArrowRight } from 'phosphor-react'
-import Image from 'next/image'
 import Link from 'next/link'
-import GraphGif from '@/assets/graph.gif'
-import RocketGif from '@/assets/rocket.gif'
 import { useTranslation } from 'next-i18next'
 
 interface FeesProps {

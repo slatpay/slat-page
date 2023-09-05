@@ -21,6 +21,7 @@ export function Fees({ feesRef }: FeesProps) {
             className="force-autoplay"
             style={{
               maxWidth: '100%',
+              mixBlendMode: 'multiply',
             }}
             width={355}
             height={265}

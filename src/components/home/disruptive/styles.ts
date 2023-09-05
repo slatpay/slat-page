@@ -26,7 +26,7 @@ export const DisruptiveContainer = styled('div', {
   },
 
   '@media (max-width: 768px)': {
-    margin: '3rem 0',
+    margin: '4rem 0',
     maxWidth: '100vw',
   },
 })

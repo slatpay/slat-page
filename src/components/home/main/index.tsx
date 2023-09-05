@@ -8,7 +8,7 @@ import {
   OpenAccountButton,
 } from './styles'
 import { ArrowRight } from 'phosphor-react'
-import Dashboard from '@/assets/Dashboard.svg'
+import Dashboard from '@/assets/Dashboard.png'
 import Cursor from '@/assets/Cursors.png'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'

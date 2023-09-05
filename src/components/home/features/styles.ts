@@ -6,7 +6,7 @@ export const FeaturesContainer = styled('div', {
   width: '120vw',
   height: 'auto',
   marginLeft: '-10vw',
-  marginTop: '-30vh',
+  marginTop: '-25vh',
   transform: 'rotate(-2.551deg)',
   background:
     'radial-gradient(50% 50.00% at 50% 50.00%, #16223A 0%, #030D21 100%)',

@@ -1,7 +1,6 @@
 import { ArrowUpRight } from 'phosphor-react'
 import { StartContainer, StartContent } from './styles'
 import { useRouter } from 'next/router'
-import Background from '@/assets/startBg.gif'
 import { useTranslation } from 'next-i18next'
 
 export function Start() {
@@ -10,12 +9,7 @@ export function Start() {
   const { t } = useTranslation()
 
   return (
-    <StartContainer
-      css={{
-        backgroundImage: `url(${Background.src})`,
-        backgroundSize: 'cover',
-      }}
-    >
+    <StartContainer>
       <StartContent>
         <h2>
           <span>{t('less_fees_footer')}</span>
@@ -25,6 +19,13 @@ export function Start() {
           {t('open_account')} <ArrowUpRight weight="bold" />
         </button>
       </StartContent>
+
+      <video width="100%" height="100%" autoPlay loop muted playsInline>
+        <source
+          src="https://cdn.slatpay.com/cdn/startBg.mp4"
+          type="video/mp4"
+        />
+      </video>
     </StartContainer>
   )
 }

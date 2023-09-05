@@ -18,10 +18,22 @@ export const StartContainer = styled('div', {
   height: 495,
   margin: '0 auto',
   background: '#000',
+  position: 'relative',
+  zIndex: 1,
 
   '@media (max-width: 768px)': {
     maxWidth: '95vw',
     height: 400,
+  },
+
+  video: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: -1,
   },
 })
 

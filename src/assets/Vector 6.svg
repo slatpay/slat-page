@@ -1,6 +1,0 @@
-<?xml version="1.0" standalone="no"?>
-<svg id="Vector6" width="1440" height="653" viewBox="0 0 1440 653" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; max-height: 100%;">
-<path d="M4 120H291V218H491M1042.5 218.5H1289.5L1290 118L1440 118.5M-1 318.5H390V419.5H491M1029.5 419.5H1191.5V515.5H1440M690 652.5V518H790V480.5M790 166.5V18H690V0.5" stroke="#00A0D8" stroke-width="0.5" stroke-dasharray="0,0,0,2720.001953125"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="4.545454545454546s" values="0,0,0,2720.001953125; 
-          0,1360.0009765625,1360.0009765625,0; 
-          2720.001953125,0,0,0" keyTimes="0; 0.5; 1" fill="freeze"></animate></path>
-<setting>{"type":"direct","speed":11,"random":1,"shift":1,"size":1,"rupture":50}</setting></svg>

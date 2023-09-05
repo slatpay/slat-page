@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { StreamContainer, StreamContent } from './styles'
 import { ArrowRight } from 'phosphor-react'
-import SlatTv from '@/assets/slattv.svg'
+import SlatTv from '@/assets/slattv.png'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 

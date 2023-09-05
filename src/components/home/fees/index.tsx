@@ -19,16 +19,23 @@ export function Fees({ feesRef }: FeesProps) {
       <FeesContent>
         <FeesBox>
           <h2 dangerouslySetInnerHTML={{ __html: t('less_fees') }} />
-          <Image
+
+          <video
             style={{
               maxWidth: '100%',
             }}
-            src={GraphGif}
-            alt="Fees"
-            quality={60}
             width={355}
             height={265}
-          />
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="https://cdn.slatpay.com/cdn/graph.mp4"
+              type="video/mp4"
+            />
+          </video>
           <div>
             <p dangerouslySetInnerHTML={{ __html: t('less_fees_desc') }} />
             <Link href="/waitlist">
@@ -38,16 +45,22 @@ export function Fees({ feesRef }: FeesProps) {
         </FeesBox>
         <FeesBox>
           <h2 dangerouslySetInnerHTML={{ __html: t('step_into') }} />
-          <Image
+          <video
             style={{
               maxWidth: '100%',
             }}
-            src={RocketGif}
-            alt="Fees"
-            quality={60}
             width={355}
             height={265}
-          />
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="https://cdn.slatpay.com/cdn/rocket.mp4"
+              type="video/mp4"
+            />
+          </video>
           <div>
             <p dangerouslySetInnerHTML={{ __html: t('step_into_desc') }} />
           </div>

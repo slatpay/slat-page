@@ -91,7 +91,7 @@ export function Main({ mainRef }: MainProps) {
             style={{
               objectFit: 'contain',
             }}
-            quality={60}
+            quality={100}
             src={Cursor}
             alt="Cursor"
             priority={true}
@@ -102,7 +102,7 @@ export function Main({ mainRef }: MainProps) {
             style={{
               objectFit: 'contain',
             }}
-            quality={60}
+            quality={100}
             src={Dashboard}
             alt="Dashboard"
             priority={true}

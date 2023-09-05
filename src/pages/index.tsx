@@ -40,9 +40,7 @@ export default function Home() {
   }`
 
   useEffect(() => {
-    const video = document.getElementsByClassName(
-      'force-autoplay',
-    ) as unknown as HTMLVideoElement
+    const videoElements = document.getElementsByClassName('force-autoplay')
 
     // Função para detectar se o usuário está em um dispositivo móvel
     function isMobileDevice() {
@@ -52,14 +50,17 @@ export default function Home() {
       )
     }
 
-    // Se for um dispositivo móvel, tente reproduzir o vídeo
+    // Se for um dispositivo móvel, tente reproduzir todos os vídeos
     if (isMobileDevice()) {
-      video.play().catch((error) => {
-        // Trate possíveis erros aqui
-        console.error('Erro ao tentar reproduzir o vídeo:', error)
-      })
+      for (let i = 0; i < videoElements.length; i++) {
+        const video = videoElements[i] as HTMLVideoElement
+        video.play().catch((error) => {
+          // Trate possíveis erros aqui
+          console.error('Erro ao tentar reproduzir o vídeo:', error)
+        })
+      }
     }
-  }, []) // O array vazio como segundo argumento garante que o useEffect seja executado apenas uma vez, similar ao componentDidMount
+  }, [])
 
   return (
     <>

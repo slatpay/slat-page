@@ -31,12 +31,14 @@ export function Stream() {
       </StreamContent>
       <StreamContent direction="normal">
         <video
+          className="force-autoplay"
           key="https://cdn.slatpay.com/cdn/6.mp4"
           width={500}
           height={500}
           autoPlay
           muted
           loop
+          disablePictureInPicture
         >
           <source src="https://cdn.slatpay.com/cdn/6.mp4" type="video/mp4" />
         </video>

@@ -18,6 +18,7 @@ export function Fees({ feesRef }: FeesProps) {
           <h2 dangerouslySetInnerHTML={{ __html: t('less_fees') }} />
 
           <video
+            className="force-autoplay"
             style={{
               maxWidth: '100%',
             }}
@@ -25,6 +26,7 @@ export function Fees({ feesRef }: FeesProps) {
             height={265}
             autoPlay
             loop
+            disablePictureInPicture
             muted
             playsInline
           >
@@ -43,6 +45,7 @@ export function Fees({ feesRef }: FeesProps) {
         <FeesBox>
           <h2 dangerouslySetInnerHTML={{ __html: t('step_into') }} />
           <video
+            className="force-autoplay"
             style={{
               maxWidth: '100%',
             }}
@@ -51,6 +54,7 @@ export function Fees({ feesRef }: FeesProps) {
             autoPlay
             loop
             muted
+            disablePictureInPicture
             playsInline
           >
             <source

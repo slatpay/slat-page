@@ -12,7 +12,7 @@ import { Global } from '@/components/home/world'
 import { Stream } from '@/components/home/stream'
 import { Start } from '@/components/home/start'
 import { Footer } from '@/components/footer'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
@@ -38,6 +38,28 @@ export default function Home() {
   const canonicalURL = `https://slatpay.com/${
     currentLocale === defaultLocale ? '' : currentLocale
   }`
+
+  useEffect(() => {
+    const video = document.getElementsByClassName(
+      'force-autoplay',
+    ) as unknown as HTMLVideoElement
+
+    // Função para detectar se o usuário está em um dispositivo móvel
+    function isMobileDevice() {
+      return (
+        typeof window.orientation !== 'undefined' ||
+        navigator.userAgent.indexOf('IEMobile') !== -1
+      )
+    }
+
+    // Se for um dispositivo móvel, tente reproduzir o vídeo
+    if (isMobileDevice()) {
+      video.play().catch((error) => {
+        // Trate possíveis erros aqui
+        console.error('Erro ao tentar reproduzir o vídeo:', error)
+      })
+    }
+  }, []) // O array vazio como segundo argumento garante que o useEffect seja executado apenas uma vez, similar ao componentDidMount
 
   return (
     <>

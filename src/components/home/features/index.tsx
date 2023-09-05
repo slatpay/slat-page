@@ -59,12 +59,14 @@ export function Features({ featuresRef }: FeaturesProps) {
 
         <FeaturesGrid>
           <video
+            className="force-autoplay"
             key={img}
             width={600}
             height={415}
             autoPlay
             loop
             muted
+            disablePictureInPicture
             playsInline
           >
             <source src={img} type="video/mp4" />

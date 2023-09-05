@@ -20,7 +20,16 @@ export function Start() {
         </button>
       </StartContent>
 
-      <video width="100%" height="100%" autoPlay loop muted playsInline>
+      <video
+        className="force-autoplay"
+        width="100%"
+        height="100%"
+        autoPlay
+        loop
+        muted
+        disablePictureInPicture
+        playsInline
+      >
         <source
           src="https://cdn.slatpay.com/cdn/startBg.mp4"
           type="video/mp4"

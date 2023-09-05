@@ -58,11 +58,13 @@ export function Disruptive() {
             objectFit: 'cover',
             mixBlendMode: 'multiply',
           }}
+          className="force-autoplay"
           width={405}
           height={705}
           autoPlay
           loop
           muted
+          disablePictureInPicture
           playsInline
         >
           <source
@@ -77,11 +79,13 @@ export function Disruptive() {
               objectFit: 'cover',
               mixBlendMode: 'multiply',
             }}
+            className="force-autoplay"
             width={750}
             height={500}
             autoPlay
             loop
             muted
+            disablePictureInPicture
             playsInline
           >
             <source

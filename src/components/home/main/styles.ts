@@ -4,10 +4,24 @@ import Link from 'next/link'
 export const MainContainer = styled('div', {
   width: '100vw',
   height: '155vh',
+  marginBottom: '14rem',
   background: '#00040B',
 
   '@media (max-width: 768px)': {
     height: '100vh',
+    marginBottom: '18rem',
+  },
+
+  '@media (min-width: 1348px) and (max-width: 1654px)': {
+    marginBottom: '30rem',
+  },
+
+  '@media (min-width: 955px) and (max-width: 1348px)': {
+    marginBottom: '40rem',
+  },
+
+  '@media (min-width: 768px) and (max-width: 955px)': {
+    marginBottom: '50rem',
   },
 
   '&::after': {

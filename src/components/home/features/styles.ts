@@ -4,9 +4,9 @@ import { CaretDown } from 'phosphor-react'
 
 export const FeaturesContainer = styled('div', {
   width: '120vw',
-  height: '100vh',
+  height: 'auto',
   marginLeft: '-10vw',
-  marginTop: '-30vh',
+  marginTop: '-40vh',
   transform: 'rotate(-2.551deg)',
   background:
     'radial-gradient(50% 50.00% at 50% 50.00%, #16223A 0%, #030D21 100%)',

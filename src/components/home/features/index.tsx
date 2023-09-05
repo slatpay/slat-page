@@ -58,7 +58,15 @@ export function Features({ featuresRef }: FeaturesProps) {
         <p>{t('features_desc')}</p>
 
         <FeaturesGrid>
-          <video key={img} width={600} height={415} autoPlay muted loop>
+          <video
+            key={img}
+            width={600}
+            height={415}
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
             <source src={img} type="video/mp4" />
           </video>
           <div>

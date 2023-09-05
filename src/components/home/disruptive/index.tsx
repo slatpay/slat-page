@@ -54,7 +54,7 @@ export function Disruptive() {
 
       <DisruptiveImage>
         <Image
-          src={Disruptive2}
+          src={Disruptive3}
           alt=""
           style={{
             objectFit: 'cover',
@@ -67,7 +67,7 @@ export function Disruptive() {
 
         <div>
           <Image
-            src={Disruptive1}
+            src={Disruptive3}
             alt=""
             style={{
               objectFit: 'cover',

@@ -3,7 +3,7 @@ import { styled } from '@/styles/stitches.config'
 export const DisruptiveContainer = styled('div', {
   width: '100%',
   maxWidth: '1120px',
-  margin: '130px auto',
+  margin: '300px auto',
 
   '.title': {
     padding: '0 1rem',

@@ -98,14 +98,14 @@ export default function Home() {
       >
         <Header mainRef={mainRef} featuresRef={featuresRef} feesRef={feesRef} />
         <Main mainRef={mainRef} />
-        <BrandsContainer>
+        {/* <BrandsContainer>
           <Image src={Brands} alt="Brands" width={925} height={35} />
-        </BrandsContainer>
-        <Disruptive />
+        </BrandsContainer> */}
+        {/* <Disruptive /> */}
         <Features featuresRef={featuresRef} />
-        <Fees feesRef={feesRef} />
+        {/* <Fees feesRef={feesRef} /> */}
         <Icons />
-        <Global />
+        {/* <Global /> */}
         <Stream />
         <Lines />
         <Start />

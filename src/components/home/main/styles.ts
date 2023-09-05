@@ -12,6 +12,10 @@ export const MainContainer = styled('div', {
     marginBottom: '18rem',
   },
 
+  '@media (min-width: 1654px)': {
+    marginBottom: '20rem',
+  },
+
   '@media (min-width: 1348px) and (max-width: 1654px)': {
     marginBottom: '30rem',
   },

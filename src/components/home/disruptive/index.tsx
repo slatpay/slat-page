@@ -53,30 +53,42 @@ export function Disruptive() {
       </DisruptiveContent>
 
       <DisruptiveImage>
-        <Image
-          src={Disruptive3}
-          alt=""
+        <video
           style={{
             objectFit: 'cover',
+            mixBlendMode: 'multiply',
           }}
-          priority={true}
-          quality={65}
           width={405}
           height={705}
-        />
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source
+            src="https://cdn.slatpay.com/cdn/Disruptive1.mp4"
+            type="video/mp4"
+          />
+        </video>
 
         <div>
-          <Image
-            src={Disruptive3}
-            alt=""
+          <video
             style={{
               objectFit: 'cover',
+              mixBlendMode: 'multiply',
             }}
-            priority={true}
-            quality={65}
             width={750}
             height={500}
-          />
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="https://cdn.slatpay.com/cdn/Disruptive2.mp4"
+              type="video/mp4"
+            />
+          </video>
           <Image
             src={Disruptive3}
             alt=""

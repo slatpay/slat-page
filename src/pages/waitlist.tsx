@@ -311,6 +311,7 @@ export default function WaitList() {
 
         {openModal && (
           <WaitlistModal
+            email={signupForm.email || ''}
             userName={signupForm.name || ''}
             token={signupResponse.token || ''}
             iaAnswer={signupResponse.iaAnswer || ''}

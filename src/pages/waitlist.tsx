@@ -212,7 +212,7 @@ export default function WaitList() {
         />
       </Head>
 
-      <Dialog.Root open={true}>
+      <Dialog.Root open={openModal}>
         <WaitListContainer>
           <WaitListContent>
             <Image
@@ -306,12 +306,9 @@ export default function WaitList() {
         </WaitListContainer>
 
         <WaitlistModal
-          userName={signupForm.name || 'Gabriel'}
-          token={signupResponse.token || 'token'}
-          iaAnswer={
-            signupResponse.iaAnswer ||
-            'Parabens foi aceito e aprovado na waitlist, estamos entuasiastrados para te ver na plataforma!'
-          }
+          userName={signupForm.name || ''}
+          token={signupResponse.token || ''}
+          iaAnswer={signupResponse.iaAnswer || ''}
         />
       </Dialog.Root>
     </>

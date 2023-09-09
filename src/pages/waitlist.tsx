@@ -6,7 +6,13 @@ import {
   WaitListSecondDraws,
 } from '@/styles/waitlist.styles'
 import Image from 'next/image'
-import { ArrowRight, Envelope, Password, User } from 'phosphor-react'
+import {
+  ArrowRight,
+  Envelope,
+  Password,
+  TextAlignLeft,
+  User,
+} from 'phosphor-react'
 import IconLogo from '@/assets/iconLogo.png'
 import * as z from 'zod'
 import { useState } from 'react'
@@ -23,6 +29,7 @@ const signup = z.object({
   password: z
     .string()
     .min(6, { message: 'Password must be at least 6 characters' }),
+  wantUsePlataform: z.string().min(10, { message: 'Invalid answer' }),
 })
 
 type Signup = z.infer<typeof signup>
@@ -32,20 +39,16 @@ export const SIGNUP_MUTATION = gql`
     $name: String!
     $email: String!
     $password: String!
-    $currency: String!
-    $ipAddress: String!
-    $location: String!
     $referredByCode: String
+    $wantUsePlataform: String!
   ) {
     signup(
       data: {
         name: $name
         email: $email
         password: $password
-        currency: $currency
-        ipAddress: $ipAddress
-        location: $location
         referredByCode: $referredByCode
+        wantUsePlataform: $wantUsePlataform
       }
     ) {
       status
@@ -59,12 +62,15 @@ export default function WaitList() {
     name: '',
     email: '',
     password: '',
+    wantUsePlataform: '',
   })
 
   const router = useRouter()
   const referredByCode = router.query.ref || ''
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target
 
     setSignupForm((prev) => ({
@@ -83,9 +89,6 @@ export default function WaitList() {
         signupMutation({
           variables: {
             ...signupForm,
-            currency: 'BRL',
-            ipAddress: '0.0.0.0',
-            location: 'Brazil',
             referredByCode,
           },
         }),
@@ -221,7 +224,7 @@ export default function WaitList() {
                 name="email"
                 onChange={handleChange}
                 value={signupForm.email}
-                placeholder="Enter your email"
+                placeholder="Digite seu email"
               />
             </div>
             <div className="input">
@@ -231,7 +234,31 @@ export default function WaitList() {
                 name="password"
                 onChange={handleChange}
                 value={signupForm.password}
-                placeholder="Enter your password"
+                placeholder="Digite sua senha!"
+              />
+            </div>
+            <div
+              style={{
+                height: 'auto',
+                alignItems: 'flex-start',
+              }}
+              className="input"
+            >
+              <TextAlignLeft size={20} />
+              <textarea
+                name="wantUsePlataform"
+                onChange={handleChange}
+                value={signupForm.wantUsePlataform}
+                style={{
+                  height: 80,
+                  width: '100%',
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  color: '#fff',
+                  padding: '0px 8px',
+                  fontSize: 16,
+                }}
+                placeholder="Por que você deseja usar a plataforma?"
               />
             </div>
 

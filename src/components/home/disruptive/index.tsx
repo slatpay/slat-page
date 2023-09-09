@@ -7,8 +7,6 @@ import {
 } from './styles'
 import { ArrowRight } from 'phosphor-react'
 import Image from 'next/image'
-import Disruptive1 from '@/assets/Disruptive2.gif'
-import Disruptive2 from '@/assets/Disruptive1.gif'
 import Disruptive3 from '@/assets/Disruptive3.png'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'

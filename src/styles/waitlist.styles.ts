@@ -128,7 +128,12 @@ export const WaitListContent = styled('div', {
       input: {
         all: 'unset',
         padding: '0 .5rem',
+        width: '100%',
         color: '#868686',
+      },
+
+      'textarea:focus': {
+        outline: 'none',
       },
 
       svg: {

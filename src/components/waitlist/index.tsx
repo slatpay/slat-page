@@ -152,7 +152,7 @@ export function WaitlistModal({
             <Text size="sm">{displayedText}</Text>
             {
               // If the IA answer has another question, we don't need to show the countdown
-              iaAwnserHasAnotherQuestion && !token ? (
+              iaAwnserHasAnotherQuestion ? (
                 <form onSubmit={handleTrySecondTime}>
                   <TextArea
                     name="answer"

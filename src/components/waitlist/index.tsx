@@ -98,7 +98,7 @@ export function WaitlistModal({
       const timer = setTimeout(() => {
         setDisplayedText((prevText) => prevText + iaAnswer[charIndex])
         setCharIndex((prevIndex) => prevIndex + 1)
-      }, 15) // Adjust the speed of typing by changing the timeout value
+      }, 10) // Adjust the speed of typing by changing the timeout value
 
       return () => clearTimeout(timer)
     }

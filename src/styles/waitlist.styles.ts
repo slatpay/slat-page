@@ -96,6 +96,8 @@ export const WaitListContent = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '1rem',
+    position: 'relative',
+    zIndex: 10,
 
     '.input': {
       width: 350,

@@ -42,7 +42,7 @@ export function WaitlistModal({
 }: WaitlistModalProps) {
   const router = useRouter()
 
-  const [countdown, setCountdown] = useState(4)
+  const [countdown, setCountdown] = useState(10)
   const [displayedText, setDisplayedText] = useState('')
   const [charIndex, setCharIndex] = useState(0)
   const [trySecondChange, { loading }] = useMutation(TRY_SECOND_TIME)

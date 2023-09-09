@@ -27,12 +27,16 @@ import { WaitlistModal } from '@/components/waitlist'
 import Cookie from 'js-cookie'
 
 const signup = z.object({
-  name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
-  email: z.string().email({ message: 'Invalid email' }),
+  name: z
+    .string()
+    .min(3, { message: 'Nome tem que ter pelo menos 3 caracteres' }),
+  email: z.string().email({ message: 'Email inválido' }),
   password: z
     .string()
-    .min(6, { message: 'Password must be at least 6 characters' }),
-  wantUsePlataform: z.string().min(10, { message: 'Invalid answer' }),
+    .min(6, { message: 'Senha tem quer ter pelo menos 6 caracteres' }),
+  wantUsePlataform: z
+    .string()
+    .min(10, { message: 'Resposta tem que ter no minimo 10 caracteres' }),
 })
 
 type Signup = z.infer<typeof signup>
@@ -109,14 +113,14 @@ export default function WaitList() {
           theme: 'dark',
         })
 
-        if (token)
-          // Setando o cookie usando js-cookie
+        if (token) {
           Cookie.set('user-token', token, {
             expires: 1, // 7 dias
             path: '/',
             domain: '.slatpay.com', // Importante: defina o domínio para permitir o acesso em subdomínios
             secure: true, // Defina como seguro apenas em produção
           })
+        }
 
         setSignupResponse({ iaAnswer, token: token || '' })
         setOpenModal(true)

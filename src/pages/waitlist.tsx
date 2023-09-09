@@ -309,11 +309,13 @@ export default function WaitList() {
           <ToastContainer />
         </WaitListContainer>
 
-        <WaitlistModal
-          userName={signupForm.name || ''}
-          token={signupResponse.token || ''}
-          iaAnswer={signupResponse.iaAnswer || ''}
-        />
+        {openModal && (
+          <WaitlistModal
+            userName={signupForm.name || ''}
+            token={signupResponse.token || ''}
+            iaAnswer={signupResponse.iaAnswer || ''}
+          />
+        )}
       </Dialog.Root>
     </>
   )

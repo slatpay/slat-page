@@ -25,6 +25,7 @@ import { useRouter } from 'next/router'
 import * as Dialog from '@radix-ui/react-dialog'
 import { WaitlistModal } from '@/components/waitlist'
 import Cookie from 'js-cookie'
+import { Button } from '@slat-ui/react'
 
 const signup = z.object({
   name: z
@@ -66,7 +67,7 @@ export const SIGNUP_MUTATION = gql`
 `
 
 export default function WaitList() {
-  const [signupMutation] = useMutation(SIGNUP_MUTATION)
+  const [signupMutation, { loading }] = useMutation(SIGNUP_MUTATION)
   const [openModal, setOpenModal] = useState(false)
   const [signupForm, setSignupForm] = useState<Signup>({
     name: '',
@@ -291,9 +292,9 @@ export default function WaitList() {
                 />
               </div>
 
-              <button type="submit">
+              <Button loading={loading} variant="gradient" type="submit">
                 {t('join_waitlist')} <ArrowRight size={20} weight="bold" />
-              </button>
+              </Button>
             </form>
 
             <WaitListDraws>

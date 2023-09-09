@@ -137,6 +137,10 @@ export default function WaitList() {
           theme: 'dark',
         })
       }
+
+      toast.error('Email ja cadastrado!', {
+        theme: 'dark',
+      })
     }
   }
 

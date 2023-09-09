@@ -117,10 +117,17 @@ export function WaitlistModal({
       })
 
       if (data.trySecondChance) {
-        toast.success('Parabéns! Você foi aprovado na lista de espera!')
+        toast.success('Parabéns! Você foi aprovado na lista de espera!', {
+          theme: 'dark',
+        })
         router.push('https://dashboard.slatpay.com/login')
       } else {
-        toast.error('Resposta incorreta!')
+        toast.error(
+          'Notificamos o nossos analistas sobre sua resposta, em breve você será aceito!',
+          {
+            theme: 'dark',
+          },
+        )
       }
     } catch (error) {}
   }

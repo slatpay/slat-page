@@ -292,7 +292,12 @@ export default function WaitList() {
                 />
               </div>
 
-              <Button loading={loading} variant="gradient" type="submit">
+              <Button
+                loading={loading}
+                disabled={loading}
+                variant="gradient"
+                type="submit"
+              >
                 {t('join_waitlist')} <ArrowRight size={20} weight="bold" />
               </Button>
             </form>

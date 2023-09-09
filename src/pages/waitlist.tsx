@@ -248,7 +248,7 @@ export default function WaitList() {
                   name="name"
                   onChange={handleChange}
                   value={signupForm.name}
-                  placeholder="Digite seu nome"
+                  placeholder={t('type_name')}
                 />
               </div>
               <div className="input">
@@ -258,7 +258,7 @@ export default function WaitList() {
                   name="email"
                   onChange={handleChange}
                   value={signupForm.email}
-                  placeholder="Digite seu email"
+                  placeholder={t('type_email')}
                 />
               </div>
               <div className="input">
@@ -268,7 +268,7 @@ export default function WaitList() {
                   name="password"
                   onChange={handleChange}
                   value={signupForm.password}
-                  placeholder="Digite sua senha"
+                  placeholder={t('type_password')}
                 />
               </div>
               <div
@@ -292,7 +292,7 @@ export default function WaitList() {
                     padding: '0px 8px',
                     fontSize: 16,
                   }}
-                  placeholder="Por que você deseja usar a plataforma?"
+                  placeholder={t('type_why_want_use_plataform')}
                 />
               </div>
 

@@ -17,6 +17,7 @@ import FaqImg from '@/assets/faq.png'
 import { toast, ToastContainer } from 'react-toastify'
 import { useRouter } from 'next/navigation'
 import { gql, useMutation } from '@apollo/client'
+import { useTranslation } from 'next-i18next'
 
 interface WaitlistModalProps {
   token?: string
@@ -40,6 +41,8 @@ export function WaitlistModal({
   email,
   userName,
 }: WaitlistModalProps) {
+  const { t } = useTranslation()
+
   const router = useRouter()
 
   const [countdown, setCountdown] = useState(10)
@@ -117,17 +120,14 @@ export function WaitlistModal({
       })
 
       if (data.trySecondChance) {
-        toast.success('Parabéns! Você foi aprovado na lista de espera!', {
+        toast.success(t('waitlist_approved'), {
           theme: 'dark',
         })
         router.push('https://dashboard.slatpay.com/login')
       } else {
-        toast.error(
-          'Notificamos o nossos analistas sobre sua resposta, em breve você será aceito!',
-          {
-            theme: 'dark',
-          },
-        )
+        toast.error(t('waitlist_pending'), {
+          theme: 'dark',
+        })
       }
     } catch (error) {}
   }
@@ -155,7 +155,11 @@ export function WaitlistModal({
               }}
             />
 
-            <Heading>{userName}, cadastrado(a) com sucesso!</Heading>
+            <Heading>
+              {t('successfully_registered', {
+                value: userName,
+              })}
+            </Heading>
             <Text size="sm">{displayedText}</Text>
             {
               // If the IA answer has another question, we don't need to show the countdown
@@ -175,12 +179,14 @@ export function WaitlistModal({
                     variant="gradient"
                     size="full"
                   >
-                    Tentar novamente
+                    {t('try_again')}
                   </Button>
                 </form>
               ) : (
                 <button className="redirect">
-                  Redirecionando em {countdown} segundos...
+                  {t('redirects_link', {
+                    value: countdown,
+                  })}
                 </button>
               )
             }

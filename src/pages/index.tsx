@@ -1,7 +1,5 @@
 import { Montserrat } from 'next/font/google'
 import { Lines } from '@/components/lines/styles'
-import Brands from '@/assets/Brands.png'
-import Image from 'next/image'
 import Head from 'next/head'
 import { BrandsContainer } from '@/styles/index.styles'
 import { Disruptive } from '@/components/home/disruptive'

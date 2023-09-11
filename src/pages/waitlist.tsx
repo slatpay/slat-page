@@ -59,7 +59,8 @@ export const SIGNUP_MUTATION = gql`
         wantUsePlataform: $wantUsePlataform
       }
     ) {
-      token
+      accessToken
+      refreshToken
       status
       iaAnswer
     }
@@ -77,7 +78,8 @@ export default function WaitList() {
   })
   const [signupResponse, setSignupResponse] = useState({
     iaAnswer: '',
-    token: '',
+    accessToken: '',
+    refreshToken: '',
   })
 
   const router = useRouter()
@@ -107,15 +109,21 @@ export default function WaitList() {
         },
       })
 
-      const { token, status, iaAnswer } = data.signup
+      const { accessToken, refreshToken, status, iaAnswer } = data.signup
 
       if (status === 'success') {
         toast.success('Cadastro realizado com sucesso!', {
           theme: 'dark',
         })
 
-        if (token) {
-          Cookie.set('user-token', token, {
+        if (refreshToken && accessToken) {
+          Cookie.set('refresh-token', refreshToken, {
+            expires: 7, // 7 dias
+            path: '/',
+            domain: '.slatpay.com', // Importante: defina o domínio para permitir o acesso em subdomínios
+            secure: true, // Defina como seguro apenas em produção
+          })
+          Cookie.set('user-token', accessToken, {
             expires: 1, // 7 dias
             path: '/',
             domain: '.slatpay.com', // Importante: defina o domínio para permitir o acesso em subdomínios
@@ -123,7 +131,11 @@ export default function WaitList() {
           })
         }
 
-        setSignupResponse({ iaAnswer, token: token || '' })
+        setSignupResponse({
+          iaAnswer,
+          accessToken: accessToken || '',
+          refreshToken: refreshToken || '',
+        })
         setOpenModal(true)
       } else {
         toast.error('Erro ao realizar cadastro!', {
@@ -323,7 +335,7 @@ export default function WaitList() {
           <WaitlistModal
             email={signupForm.email || ''}
             userName={signupForm.name || ''}
-            token={signupResponse.token || ''}
+            token={signupResponse.accessToken || ''}
             iaAnswer={signupResponse.iaAnswer || ''}
           />
         )}

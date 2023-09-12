@@ -41,9 +41,8 @@ export function Main({ mainRef }: MainProps) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleMouseMove = (event: any) => {
       if (animatedRadiusRef.current === null) return
-
       animatedRadiusRef.current.style.setProperty('--x', `${event.clientX}px`)
-      animatedRadiusRef.current.style.setProperty('--y', `${event.clientY}px`)
+      animatedRadiusRef.current.style.setProperty('--y', `${(event.screenY)}px`)
     }
 
     window.addEventListener('mousemove', handleMouseMove)

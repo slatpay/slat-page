@@ -41,8 +41,8 @@ export const MainContainer = styled('div', {
   '.animatedRadius': {
     position: 'absolute',
     top: 0,
-    height: '100%',
-    width: '100%',
+    height: 'calc(100% + 450px)',
+    width: 'calc(100% - 50px)',
     background:
       'radial-gradient(250px circle at var(--x) var(--y), $slat-dark 10%, hsla(256, 7%, 97%, .0) 70%)',
     transition: 'all 0.2s ease-in-out',

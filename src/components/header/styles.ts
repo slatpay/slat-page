@@ -2,7 +2,7 @@ import { styled } from '@/styles/stitches.config'
 
 export const HeaderContainer = styled('header', {
   width: '100vw',
-  height: 70,
+  height: 68,
   background: 'rbga(0, 0, 0, 255)',
   backdropFilter: 'blur(8px)',
   position: 'fixed',

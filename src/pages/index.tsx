@@ -16,6 +16,7 @@ import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
 import { Main } from '@/components/home/main'
 import { useRouter } from 'next/router'
+import { Faq } from '@/components/faq'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -130,6 +131,7 @@ export default function Home() {
         <Stream />
         <Lines />
         <Start />
+        <Faq />
         <Footer />
       </main>
     </>

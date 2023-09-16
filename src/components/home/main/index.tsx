@@ -21,34 +21,32 @@ export function Main({ mainRef }: MainProps) {
   const animatedRadiusRef = useRef<HTMLDivElement>(null)
 
   const cellSize = 70 // Tamanho da célula em pixels
-  const [numCellsWidth, setNumCellsWidth] = useState(0)
-  const [numCellsHeight, setNumCellsHeight] = useState(0)
   const [numCells, setNumCells] = useState(0)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-      const numCellsWidth = Math.ceil(screenWidth / cellSize); // Use Math.ceil to ensure it covers the full width
-      const numCellsHeight = Math.floor((screenHeight * 1.50) / cellSize);
+      const screenWidth = window.innerWidth
+      const screenHeight = window.innerHeight
+      const numCellsWidth = Math.ceil(screenWidth / cellSize) // Use Math.ceil to ensure it covers the full width
+      const numCellsHeight = Math.floor((screenHeight * 1.3) / cellSize)
       if (screenWidth < 800) {
-        setNumCells(0);
+        setNumCells(0)
       } else {
         setNumCells(numCellsWidth * numCellsHeight);
       }
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleMouseMove = (event: MouseEvent) => {
-      if (animatedRadiusRef.current === null) return;
-      const rect = animatedRadiusRef.current.getBoundingClientRect();
-      const x = event.clientX - rect.left; // Adjust for element position
-      const y = event.clientY - rect.top; // Adjust for element position
-      animatedRadiusRef.current.style.setProperty('--x', `${x}px`);
-      animatedRadiusRef.current.style.setProperty('--y', `${y}px`);
-    };
+      if (animatedRadiusRef.current === null) return
+      const rect = animatedRadiusRef.current.getBoundingClientRect()
+      const x = event.clientX - rect.left // Adjust for element position
+      const y = event.clientY - rect.top // Adjust for element position
+      animatedRadiusRef.current.style.setProperty('--x', `${x}px`)
+      animatedRadiusRef.current.style.setProperty('--y', `${y}px`)
+    }
 
     window.addEventListener('mousemove', handleMouseMove)
 

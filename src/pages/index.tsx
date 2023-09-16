@@ -15,6 +15,7 @@ import { Header } from '@/components/header'
 import { Main } from '@/components/home/main'
 import { useRouter } from 'next/router'
 import { Faq } from '@/components/home/faq'
+import { Global } from '@/components/home/world'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -125,7 +126,7 @@ export default function Home() {
         <Features featuresRef={featuresRef} />
         <Fees feesRef={feesRef} />
         <Icons />
-        {/* <Global /> */}
+        <Global />
         <Stream />
         <Lines />
         <Faq />

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const MainContainer = styled('div', {
   width: '100vw',
-  height: '155vh',
+  height: '145vh',
   marginBottom: '14rem',
   background: '#00040B',
 
@@ -167,6 +167,23 @@ export const MiddleContent = styled('div', {
   gap: '2.5rem',
   alignItems: 'center',
   justifyContent: 'center',
+  position: 'relative',
+
+  '&::before': {
+    content: '""',
+    width: 670,
+    height: 110,
+    background: 'linear-gradient(90deg, $slat-dark 0%, $slat-light 100%)',
+    filter: 'blur(100px)',
+    borderRadius: '100%',
+    position: 'absolute',
+    opacity: 0.7,
+    left: '50%',
+
+    transform: 'translate(-50%, -90%) rotate(10deg)',
+
+    zIndex: 100,
+  },
 })
 
 export const DashboardImage = styled('div', {

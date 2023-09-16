@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
 import {
-  Cell,
   DashboardImage,
-  Grid,
   MainContainer,
   MainContent,
+  MiddleContent,
   OpenAccountButton,
 } from './styles'
 import { ArrowRight } from 'phosphor-react'
@@ -18,43 +16,6 @@ interface MainProps {
 }
 
 export function Main({ mainRef }: MainProps) {
-  const animatedRadiusRef = useRef<HTMLDivElement>(null)
-
-  const cellSize = 70 // Tamanho da célula em pixels
-  const [numCells, setNumCells] = useState(0)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const screenWidth = window.innerWidth
-      const screenHeight = window.innerHeight
-      const numCellsWidth = Math.ceil(screenWidth / cellSize) // Use Math.ceil to ensure it covers the full width
-      const numCellsHeight = Math.floor((screenHeight * 1.3) / cellSize)
-      if (screenWidth < 800) {
-        setNumCells(0)
-      } else {
-        setNumCells(numCellsWidth * numCellsHeight);
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleMouseMove = (event: MouseEvent) => {
-      if (animatedRadiusRef.current === null) return
-      const rect = animatedRadiusRef.current.getBoundingClientRect()
-      const x = event.clientX - rect.left // Adjust for element position
-      const y = event.clientY - rect.top // Adjust for element position
-      animatedRadiusRef.current.style.setProperty('--x', `${x}px`)
-      animatedRadiusRef.current.style.setProperty('--y', `${y}px`)
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
-
   const { t } = useTranslation()
 
   return (
@@ -74,19 +35,12 @@ export function Main({ mainRef }: MainProps) {
           <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            gap: '1rem',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
+        <MiddleContent>
           <OpenAccountButton href="/waitlist">
             {t('open_account', { ns: 'common' })}{' '}
             <ArrowRight weight="bold" size={24} />
           </OpenAccountButton>
-        </div>
+        </MiddleContent>
 
         <DashboardImage>
           <Image
@@ -113,12 +67,6 @@ export function Main({ mainRef }: MainProps) {
           />
         </DashboardImage>
       </MainContent>
-      <Grid>
-        {Array.from(Array(numCells).keys()).map((cell, index) => (
-          <Cell key={index} />
-        ))}
-      </Grid>
-      <div className="animatedRadius" ref={animatedRadiusRef} />
     </MainContainer>
   )
 }

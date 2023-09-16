@@ -32,7 +32,7 @@ export function Main({ mainRef }: MainProps) {
       if (screenWidth < 800) {
         setNumCells(0)
       } else {
-        setNumCells(numCellsWidth * numCellsHeight)
+        setNumCells(numCellsWidth * numCellsHeight);
       }
     }
   }, [])

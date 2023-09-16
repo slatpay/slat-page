@@ -27,24 +27,28 @@ export function Main({ mainRef }: MainProps) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setNumCellsWidth(Math.floor(window.innerWidth / cellSize))
-      setNumCellsHeight(Math.floor((window.innerHeight * 1.5) / cellSize))
-      if (window.innerWidth < 800) {
-        setNumCells(0)
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const numCellsWidth = Math.ceil(screenWidth / cellSize); // Use Math.ceil to ensure it covers the full width
+      const numCellsHeight = Math.floor((screenHeight * 1.50) / cellSize);
+      if (screenWidth < 800) {
+        setNumCells(0);
       } else {
-        setNumCells(numCellsWidth * numCellsHeight)
+        setNumCells(numCellsWidth * numCellsHeight);
       }
     }
-  }, [numCellsWidth, numCellsHeight])
+  }, []);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleMouseMove = (event: any) => {
-      if (animatedRadiusRef.current === null) return
-
-      animatedRadiusRef.current.style.setProperty('--x', `${event.clientX}px`)
-      animatedRadiusRef.current.style.setProperty('--y', `${event.clientY}px`)
-    }
+    const handleMouseMove = (event: MouseEvent) => {
+      if (animatedRadiusRef.current === null) return;
+      const rect = animatedRadiusRef.current.getBoundingClientRect();
+      const x = event.clientX - rect.left; // Adjust for element position
+      const y = event.clientY - rect.top; // Adjust for element position
+      animatedRadiusRef.current.style.setProperty('--x', `${x}px`);
+      animatedRadiusRef.current.style.setProperty('--y', `${y}px`);
+    };
 
     window.addEventListener('mousemove', handleMouseMove)
 

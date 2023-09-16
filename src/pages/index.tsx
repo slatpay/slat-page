@@ -1,12 +1,10 @@
 import { Montserrat } from 'next/font/google'
 import { Lines } from '@/components/lines/styles'
 import Head from 'next/head'
-import { BrandsContainer } from '@/styles/index.styles'
 import { Disruptive } from '@/components/home/disruptive'
 import { Features } from '@/components/home/features'
 import { Fees } from '@/components/home/fees'
 import { Icons } from '@/components/home/icons'
-import { Global } from '@/components/home/world'
 import { Stream } from '@/components/home/stream'
 import { Start } from '@/components/home/start'
 import { Footer } from '@/components/footer'
@@ -16,6 +14,7 @@ import { useTranslation } from 'next-i18next'
 import { Header } from '@/components/header'
 import { Main } from '@/components/home/main'
 import { useRouter } from 'next/router'
+import { Faq } from '@/components/home/faq'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -129,6 +128,7 @@ export default function Home() {
         {/* <Global /> */}
         <Stream />
         <Lines />
+        <Faq />
         <Start />
         <Footer />
       </main>

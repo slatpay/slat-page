@@ -149,10 +149,12 @@ export default function WaitList() {
           theme: 'dark',
         })
       }
-
-      toast.error('Email ja cadastrado!', {
-        theme: 'dark',
-      })
+      toast.error(
+        'Erro ao realizar cadastro! porfavor entre em contato com os admninstradores!',
+        {
+          theme: 'dark',
+        },
+      )
     }
   }
 

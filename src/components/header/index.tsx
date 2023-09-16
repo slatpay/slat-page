@@ -53,6 +53,10 @@ export function Header({
     return () => window.removeEventListener('scroll', checkScroll)
   }, [mainRef])
 
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ')
+  }
+
   return (
     <HeaderContainer
       css={{
@@ -60,8 +64,14 @@ export function Header({
           isScrolledPastMain || scrolled ? 'white' : 'transparent',
       }}
     >
+      <span
+        className={classNames(
+          isScrolledPastMain || scrolled ? '' : 'hidden',
+          'absolute inset-0 mt-16 min-w-full r-0 h-1 bg-cyan-500',
+        )}
+      />
       <HeaderContent isScrolled={isScrolledPastMain || scrolled}>
-        <div className="content">
+        <div className="content mt-1 sm:-mt-0.5">
           <Link href="/">
             <Image
               style={{
@@ -98,7 +108,10 @@ export function Header({
 
           <div className="user">
             <Link href="https://dashboard.slatpay.com/login">Login</Link>
-            <button onClick={() => router.push('/waitlist')}>
+            <button
+              className="leading-3 text-xs md:text-base"
+              onClick={() => router.push('/waitlist')}
+            >
               {t('join_in_waitlist', { ns: 'common' })}
             </button>
           </div>

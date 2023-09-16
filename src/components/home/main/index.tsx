@@ -95,7 +95,7 @@ export function Main({ mainRef }: MainProps) {
             }}
             quality={100}
             src={Cursor}
-            alt="Cursor pointers"
+            alt="Cursor"
             priority={true}
             width={1120}
             height={100}

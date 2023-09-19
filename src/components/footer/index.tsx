@@ -78,12 +78,14 @@ export function Footer() {
             </ul>
 
             <div className="social">
-              <Link aria-label="Slatpay instagram" href="#">
+              <Link 
+              aria-label="Slatpay instagram" 
+              href="https://www.instagram.com/slatpayoficial">
                 <InstagramLogo weight="fill" size={24} />
               </Link>
               <Link
                 aria-label="Slatpay twitter"
-                href="https://twitter.com/slatpay#"
+                href="https://twitter.com/slatpay"
               >
                 <TwitterLogo weight="fill" size={24} />
               </Link>

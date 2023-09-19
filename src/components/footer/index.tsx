@@ -78,9 +78,10 @@ export function Footer() {
             </ul>
 
             <div className="social">
-              <Link 
-              aria-label="Slatpay instagram" 
-              href="https://www.instagram.com/slatpayoficial">
+              <Link
+                aria-label="Slatpay instagram"
+                href="https://www.instagram.com/slatpayoficial"
+              >
                 <InstagramLogo weight="fill" size={24} />
               </Link>
               <Link

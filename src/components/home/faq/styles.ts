@@ -83,6 +83,10 @@ export const Button = styled('button', {
   cursor: 'pointer',
   lineHeight: '1.75rem',
   boxShadow: '0px -80px 120px rgba(76, 86, 115, 0.05)',
+
+  span: {
+    textAlign: 'left',
+  },
 })
 
 export const IconContainer = styled('span', {

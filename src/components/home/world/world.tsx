@@ -14,6 +14,20 @@ const generateRandomCoordinates = () => ({
   lng: Math.random() * 360 - 180, // gera uma longitude entre -180 e 180
 })
 
+const isDevicePowerful = () => {
+  const startTime = window.performance.now()
+
+  // Execute uma tarefa que leva algum tempo. Por exemplo, um loop simples.
+  for (let i = 0; i < 1000000; i++) {
+    /* empty */
+  }
+
+  const endTime = window.performance.now()
+
+  // Se a tarefa levar menos de 50ms, considere o dispositivo potente.
+  return endTime - startTime < 50
+}
+
 const GlobeWithNoSSR = dynamic(
   () =>
     import('react-globe.gl').then((mod) => {
@@ -24,8 +38,13 @@ const GlobeWithNoSSR = dynamic(
         // Aqui você pode usar useEffect.
         useEffect(() => {
           if (globeEl.current) {
-            globeEl.current.controls().autoRotate = true
-            globeEl.current.controls().autoRotateSpeed = 2
+            const powerfulDevice = isDevicePowerful()
+
+            if (powerfulDevice) {
+              globeEl.current.controls().autoRotate = true
+              globeEl.current.controls().autoRotateSpeed = 2
+            }
+
             globeEl.current.controls().enableZoom = false
           }
         }, [globeEl])

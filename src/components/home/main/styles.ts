@@ -25,7 +25,7 @@ export const MainContainer = styled('div', {
   },
 
   '@media (min-width: 1655px)': {
-    marginBottom: '20rem',
+    marginBottom: '32rem',
   },
 
   '&::after': {

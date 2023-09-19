@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const MainContainer = styled('div', {
   width: '100vw',
-  height: '145vh',
+  height: '155vh',
   marginBottom: '14rem',
   background: '#00040B',
 
@@ -25,7 +25,7 @@ export const MainContainer = styled('div', {
   },
 
   '@media (min-width: 1655px)': {
-    marginBottom: '20rem',
+    marginBottom: '32rem',
   },
 
   '&::after': {

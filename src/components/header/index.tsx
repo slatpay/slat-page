@@ -43,7 +43,7 @@ export function Header({
 
       if (mainRef.current === null) return
 
-      const mainBottomY = mainRef.current?.getBoundingClientRect().bottom + 800
+      const mainBottomY = mainRef.current?.getBoundingClientRect().height + 800
       if (mainBottomY !== undefined) {
         setIsScrolledPastMain(window.scrollY > mainBottomY)
       }

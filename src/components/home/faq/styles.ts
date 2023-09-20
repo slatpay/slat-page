@@ -7,7 +7,7 @@ export const Container = styled('div', {
   maxWidth: '1120px',
   padding: '6rem 1.5rem',
 
-  '@sm': {
+  '@media (max-width: 768px)': {
     padding: '8rem 2rem',
   },
 })

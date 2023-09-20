@@ -4,6 +4,10 @@ import Link from 'next/link'
 export const MainWrapper = styled('div', {
   width: '100%',
   height: '115rem',
+
+  '@media (max-width: 768px)': {
+    height: '100vh',
+  },
 })
 
 export const MainContainer = styled('div', {

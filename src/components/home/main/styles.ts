@@ -4,6 +4,10 @@ import Link from 'next/link'
 export const MainWrapper = styled('div', {
   width: '100%',
   height: '115rem',
+  
+  '@media (max-width: 768px)': {
+    height: '100vh',
+  },
 })
 
 export const MainContainer = styled('div', {
@@ -16,22 +20,6 @@ export const MainContainer = styled('div', {
     height: '100vh',
     marginBottom: '18rem',
   },
-
-  // '@media (min-width: 769px) and (max-width: 955px)': {
-  //   marginBottom: '50rem',
-  // },
-
-  // '@media (min-width: 956px) and (max-width: 1348px)': {
-  //   marginBottom: '40rem',
-  // },
-
-  // '@media (min-width: 1349px) and (max-width: 1654px)': {
-  //   marginBottom: '40rem',
-  // },
-
-  // '@media (min-width: 1655px)': {
-  //   marginBottom: '32rem',
-  // },
 
   '&::after': {
     content: '""',

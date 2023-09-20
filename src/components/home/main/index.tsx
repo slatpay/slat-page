@@ -2,6 +2,7 @@ import {
   DashboardImage,
   MainContainer,
   MainContent,
+  MainWrapper,
   MiddleContent,
   OpenAccountButton,
 } from './styles'
@@ -19,54 +20,56 @@ export function Main({ mainRef }: MainProps) {
   const { t } = useTranslation()
 
   return (
-    <MainContainer ref={mainRef}>
-      <MainContent>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.25rem',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
-
-          <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
-        </div>
-
-        <MiddleContent>
-          <OpenAccountButton href="/waitlist">
-            {t('open_account', { ns: 'common' })}{' '}
-            <ArrowRight weight="bold" size={24} />
-          </OpenAccountButton>
-        </MiddleContent>
-
-        <DashboardImage>
-          <Image
+    <MainWrapper>
+      <MainContainer ref={mainRef}>
+        <MainContent>
+          <div
             style={{
-              objectFit: 'contain',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.25rem',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
-            quality={100}
-            src={Cursor}
-            alt="Cursor"
-            priority={true}
-            width={1120}
-            height={100}
-          />
-          <Image
-            style={{
-              objectFit: 'contain',
-            }}
-            quality={100}
-            src={Dashboard}
-            alt="Dashboard"
-            priority={true}
-            width={1200}
-            height={1120}
-          />
-        </DashboardImage>
-      </MainContent>
-    </MainContainer>
+          >
+            <h1 dangerouslySetInnerHTML={{ __html: t('main_title') }} />
+
+            <p dangerouslySetInnerHTML={{ __html: t('main_desc') }} />
+          </div>
+
+          <MiddleContent>
+            <OpenAccountButton href="/waitlist">
+              {t('open_account', { ns: 'common' })}{' '}
+              <ArrowRight weight="bold" size={24} />
+            </OpenAccountButton>
+          </MiddleContent>
+
+          <DashboardImage>
+            <Image
+              style={{
+                objectFit: 'contain',
+              }}
+              quality={100}
+              src={Cursor}
+              alt="Cursor"
+              priority={true}
+              width={1120}
+              height={100}
+            />
+            <Image
+              style={{
+                objectFit: 'contain',
+              }}
+              quality={100}
+              src={Dashboard}
+              alt="Dashboard"
+              priority={true}
+              width={1200}
+              height={1120}
+            />
+          </DashboardImage>
+        </MainContent>
+      </MainContainer>
+    </MainWrapper>
   )
 }

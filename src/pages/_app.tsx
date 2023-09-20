@@ -15,7 +15,7 @@ function App({ Component, pageProps }: AppProps) {
 
     const playVideo = function (this: HTMLVideoElement) {
       this.play().catch((error: unknown) => {
-        console.error('Falha no autoplay:', error)
+        console.error('Autoplay error:', error)
       })
     }
 

@@ -1,6 +1,11 @@
 import { keyframes, styled } from '@/styles/stitches.config'
 import Link from 'next/link'
 
+export const MainWrapper = styled('div', {
+  width: '100%',
+  height: '115rem',
+})
+
 export const MainContainer = styled('div', {
   width: '100vw',
   height: '155vh',
@@ -12,21 +17,21 @@ export const MainContainer = styled('div', {
     marginBottom: '18rem',
   },
 
-  '@media (min-width: 769px) and (max-width: 955px)': {
-    marginBottom: '50rem',
-  },
+  // '@media (min-width: 769px) and (max-width: 955px)': {
+  //   marginBottom: '50rem',
+  // },
 
-  '@media (min-width: 956px) and (max-width: 1348px)': {
-    marginBottom: '40rem',
-  },
+  // '@media (min-width: 956px) and (max-width: 1348px)': {
+  //   marginBottom: '40rem',
+  // },
 
-  '@media (min-width: 1349px) and (max-width: 1654px)': {
-    marginBottom: '40rem',
-  },
+  // '@media (min-width: 1349px) and (max-width: 1654px)': {
+  //   marginBottom: '40rem',
+  // },
 
-  '@media (min-width: 1655px)': {
-    marginBottom: '32rem',
-  },
+  // '@media (min-width: 1655px)': {
+  //   marginBottom: '32rem',
+  // },
 
   '&::after': {
     content: '""',

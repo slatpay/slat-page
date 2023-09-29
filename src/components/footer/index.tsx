@@ -2,7 +2,12 @@ import Image from 'next/image'
 import { FooterContainer, FooterContent, FooterLinks } from './styles'
 import SlatLogo from '@/assets/Logo.png'
 import Link from 'next/link'
-import { InstagramLogo, LinkedinLogo, TwitterLogo } from 'phosphor-react'
+import {
+  DiscordLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  TwitterLogo,
+} from 'phosphor-react'
 
 export function Footer() {
   return (
@@ -83,6 +88,12 @@ export function Footer() {
                 href="https://www.instagram.com/slatpayoficial"
               >
                 <InstagramLogo weight="fill" size={24} />
+              </Link>
+              <Link
+                aria-label="Slatpay discord"
+                href="https://discord.gg/eSxfNQkR"
+              >
+                <DiscordLogo weight="fill" size={24} />
               </Link>
               <Link
                 aria-label="Slatpay twitter"

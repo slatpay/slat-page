@@ -91,7 +91,7 @@ export function Footer() {
               </Link>
               <Link
                 aria-label="Slatpay discord"
-                href="https://discord.gg/eSxfNQkR"
+                href="https://discord.gg/ktFAZ3dn7K"
               >
                 <DiscordLogo weight="fill" size={24} />
               </Link>

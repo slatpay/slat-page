@@ -15,7 +15,11 @@ export function Start() {
           <span>{t('less_fees_footer')}</span>
         </h2>
         <p>{t('get_ahead')}</p>
-        <button onClick={() => router.push('/waitlist')}>
+        <button
+          onClick={() =>
+            router.push('https://dashboard.slatpay.com/pt-br/signup')
+          }
+        >
           {t('open_account')} <ArrowUpRight weight="bold" />
         </button>
       </StartContent>

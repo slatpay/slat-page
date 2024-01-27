@@ -38,7 +38,7 @@ export function Main({ mainRef }: MainProps) {
           </div>
 
           <MiddleContent>
-            <OpenAccountButton href="/waitlist">
+            <OpenAccountButton href="https://dashboard.slatpay.com/pt-br/signup">
               {t('open_account', { ns: 'common' })}{' '}
               <ArrowRight weight="bold" size={24} />
             </OpenAccountButton>

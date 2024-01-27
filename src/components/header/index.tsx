@@ -110,7 +110,9 @@ export function Header({
             <Link href="https://dashboard.slatpay.com/login">Login</Link>
             <button
               className="leading-3 text-xs md:text-base"
-              onClick={() => router.push('/waitlist')}
+              onClick={() =>
+                router.push('https://dashboard.slatpay.com/pt-br/signup')
+              }
             >
               {t('join_in_waitlist', { ns: 'common' })}
             </button>

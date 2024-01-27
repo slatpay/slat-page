@@ -44,7 +44,11 @@ export function Disruptive() {
           <p>{t('disruptive_desc_part_2')}</p>
         </div>
 
-        <button onClick={() => router.push('/waitlist')}>
+        <button
+          onClick={() =>
+            router.push('https://dashboard.slatpay.com/pt-br/signup')
+          }
+        >
           {t('get_started', { ns: 'common' })}{' '}
           <ArrowRight weight="bold" size={16} />
         </button>

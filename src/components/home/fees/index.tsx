@@ -38,7 +38,7 @@ export function Fees({ feesRef }: FeesProps) {
           </video>
           <div>
             <p dangerouslySetInnerHTML={{ __html: t('less_fees_desc') }} />
-            <Link href="/waitlist">
+            <Link href="https://dashboard.slatpay.com/pt-br/signup">
               {t('less_fees_footer')} <ArrowRight />
             </Link>
           </div>

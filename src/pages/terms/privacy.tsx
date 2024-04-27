@@ -145,6 +145,56 @@ export default function Intellectual() {
               __html: t('intellectual_desc_pt_4'),
             }}
           />
+          <p
+            style={{
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: '1.5rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_5'),
+            }}
+          />
+          <p
+            style={{
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: '1.5rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_6'),
+            }}
+          />
+          <p
+            style={{
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: '1.5rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_7'),
+            }}
+          />
+          <p
+            style={{
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: '1.5rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_8'),
+            }}
+          />
+          <p
+            style={{
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: '1.5rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: t('intellectual_desc_pt_9'),
+            }}
+          />
         </TermsContent>
       </TermsContainer>
       <Footer />

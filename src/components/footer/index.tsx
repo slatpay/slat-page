@@ -49,7 +49,13 @@ export function Footer() {
               </li>
               <li>
                 <Link aria-label="terms of use" href="/terms/use">
-                  Terms of Service
+                  Merchant Terms of Service
+                </Link>
+              </li>
+
+              <li>
+                <Link aria-label="Payment and Fees" href="/terms/payment">
+                  Checkout Buyer Terms of Service
                 </Link>
               </li>
               <li>
@@ -61,24 +67,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  aria-label="User Responsibilities"
-                  href="/terms/responsibilities"
-                >
-                  User Responsibilities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  aria-label="Property Rights and User Content"
-                  href="/terms/intellectual"
-                >
-                  Property Rights and User Content
-                </Link>
-              </li>
-              <li>
-                <Link aria-label="Payment and Fees" href="/terms/payment">
-                  Payment and Fees
+                <Link aria-label="Privacy" href="/terms/privacy">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>

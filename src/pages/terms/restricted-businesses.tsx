@@ -26,7 +26,7 @@ export default function TermsOfUse() {
   return (
     <>
       <Head>
-        <title>Slatpay - Terms of Use</title>
+        <title>Slatpay - Prohibited Businesses</title>
         {/* Metatags padrão */}
         <meta
           name="viewport"
@@ -97,7 +97,7 @@ export default function TermsOfUse() {
 
           <h1
             dangerouslySetInnerHTML={{
-              __html: t('terms_use_title'),
+              __html: t('restricted_businesses_title'),
             }}
           />
           <p
@@ -109,7 +109,7 @@ export default function TermsOfUse() {
               color: '#444',
             }}
             dangerouslySetInnerHTML={{
-              __html: t('terms_use_subtitle'),
+              __html: t('restricted_businesses_subtitle'),
             }}
           />
 
@@ -120,7 +120,7 @@ export default function TermsOfUse() {
               lineHeight: '1.5rem',
             }}
             dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc'),
+              __html: t('restricted_businesses_desc'),
             }}
           />
           <p
@@ -130,7 +130,7 @@ export default function TermsOfUse() {
               lineHeight: '1.5rem',
             }}
             dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_2'),
+              __html: t('restricted_businesses_desc_2'),
             }}
           />
           <p
@@ -140,127 +140,7 @@ export default function TermsOfUse() {
               lineHeight: '1.5rem',
             }}
             dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_3'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_4'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_5'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_6'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_7'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_8'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_9'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_10'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_11'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_12'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_13'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_14'),
-            }}
-          />
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: 400,
-              lineHeight: '1.5rem',
-            }}
-            dangerouslySetInnerHTML={{
-              __html: t('terms_use_desc_15'),
+              __html: t('restricted_businesses_desc_3'),
             }}
           />
 

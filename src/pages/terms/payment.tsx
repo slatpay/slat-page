@@ -102,6 +102,18 @@ export default function Payments() {
             style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
             dangerouslySetInnerHTML={{ __html: t('payment_desc') }}
           />
+          <p
+            style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
+            dangerouslySetInnerHTML={{ __html: t('payment_desc_2') }}
+          />
+          <p
+            style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
+            dangerouslySetInnerHTML={{ __html: t('payment_desc_3') }}
+          />
+          <p
+            style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
+            dangerouslySetInnerHTML={{ __html: t('payment_desc_4') }}
+          />
 
           <div className="avatarColumns">
             <TermsAvatar

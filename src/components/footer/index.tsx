@@ -49,7 +49,15 @@ export function Footer() {
               </li>
               <li>
                 <Link aria-label="terms of use" href="/terms/use">
-                  Terms of Use
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  aria-label="terms of use"
+                  href="/terms/restricted-businesses"
+                >
+                  Prohibited Businesses
                 </Link>
               </li>
               <li>

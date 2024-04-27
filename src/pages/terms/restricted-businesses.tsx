@@ -143,19 +143,6 @@ export default function TermsOfUse() {
               __html: t('restricted_businesses_desc_3'),
             }}
           />
-
-          <div className="avatarColumns">
-            <TermsAvatar
-              rounded
-              src={Profile.src}
-              alt="Profile"
-              size="medium"
-            />
-            <div>
-              <h3>Gabriel Fonseca</h3>
-              <p>Chief Technology Officer</p>
-            </div>
-          </div>
         </TermsContent>
       </TermsContainer>
       <Footer />

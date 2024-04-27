@@ -114,19 +114,6 @@ export default function Payments() {
             style={{ fontSize: '1rem', fontWeight: 400, lineHeight: '1.5rem' }}
             dangerouslySetInnerHTML={{ __html: t('payment_desc_4') }}
           />
-
-          <div className="avatarColumns">
-            <TermsAvatar
-              rounded
-              src={Profile.src}
-              alt="Profile"
-              size="medium"
-            />
-            <div>
-              <h3>Gabriel Fonseca</h3>
-              <p>Chief Technology Officer</p>
-            </div>
-          </div>
         </TermsContent>
       </TermsContainer>
       <Footer />

@@ -263,19 +263,6 @@ export default function TermsOfUse() {
               __html: t('terms_use_desc_15'),
             }}
           />
-
-          <div className="avatarColumns">
-            <TermsAvatar
-              rounded
-              src={Profile.src}
-              alt="Profile"
-              size="medium"
-            />
-            <div>
-              <h3>Gabriel Fonseca</h3>
-              <p>Chief Technology Officer</p>
-            </div>
-          </div>
         </TermsContent>
       </TermsContainer>
       <Footer />

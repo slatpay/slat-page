@@ -26,7 +26,7 @@ export default function Intellectual() {
   return (
     <>
       <Head>
-        <title>Slatpay - Intellectual</title>
+        <title>Slatpay - Privacy</title>
         {/* Metatags padrão */}
         <meta
           name="viewport"
@@ -145,19 +145,6 @@ export default function Intellectual() {
               __html: t('intellectual_desc_pt_4'),
             }}
           />
-
-          <div className="avatarColumns">
-            <TermsAvatar
-              rounded
-              src={Profile.src}
-              alt="Profile"
-              size="medium"
-            />
-            <div>
-              <h3>Gabriel Fonseca</h3>
-              <p>Chief Technology Officer</p>
-            </div>
-          </div>
         </TermsContent>
       </TermsContainer>
       <Footer />

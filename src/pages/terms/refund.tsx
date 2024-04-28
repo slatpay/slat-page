@@ -101,7 +101,6 @@ export default function Intellectual() {
               __html: t('refund_title'),
             }}
           />
-          
 
           <p
             style={{

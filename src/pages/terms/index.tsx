@@ -1,6 +1,3 @@
-
-
-
 /* eslint-disable react/no-unescaped-entities */
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
@@ -102,61 +99,59 @@ export default function Intellectual() {
 
           <h1
             style={{
-                marginTop: '4rem'
+              marginTop: '4rem',
             }}
             dangerouslySetInnerHTML={{
               __html: t('Terms'),
             }}
           />
-          
 
-            <ul style={{
-                marginBottom: '4rem',
-                maxWidth: '30rem',
-                display: `flex`,
-                gap: '1rem',
-                justifyContent: 'center',
-                flexWrap: 'wrap',
-                listStyle: 'none'
-            }}>
-              <li>
-                <Link aria-label="about us" href="/terms/about">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link aria-label="terms of use" href="/terms/use">
-                  Merchant Terms
-                </Link>
-              </li>
+          <ul
+            style={{
+              marginBottom: '4rem',
+              maxWidth: '30rem',
+              display: `flex`,
+              gap: '1rem',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              listStyle: 'none',
+            }}
+          >
+            <li>
+              <Link aria-label="about us" href="/terms/about">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link aria-label="terms of use" href="/terms/use">
+                Merchant Terms
+              </Link>
+            </li>
 
-              <li>
-                <Link aria-label="Payment and Fees" href="/terms/payment">
-                  Checkout Buyer Terms
-                </Link>
-              </li>
-              <li>
-                <Link
-                  aria-label="terms of use"
-                  href="/terms/restricted-businesses"
-                >
-                  Prohibited Businesses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  aria-label="terms of use"
-                  href="/terms/refund"
-                >
-                  Refund
-                </Link>
-              </li>
-              <li>
-                <Link aria-label="Privacy" href="/terms/privacy">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
+            <li>
+              <Link aria-label="Payment and Fees" href="/terms/payment">
+                Checkout Buyer Terms
+              </Link>
+            </li>
+            <li>
+              <Link
+                aria-label="terms of use"
+                href="/terms/restricted-businesses"
+              >
+                Prohibited Businesses
+              </Link>
+            </li>
+            <li>
+              <Link aria-label="terms of use" href="/terms/refund">
+                Refund
+              </Link>
+            </li>
+            <li>
+              <Link aria-label="Privacy" href="/terms/privacy">
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
         </TermsContent>
       </TermsContainer>
       <Footer />

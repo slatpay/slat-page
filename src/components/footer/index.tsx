@@ -67,10 +67,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  aria-label="terms of use"
-                  href="/terms/refund"
-                >
+                <Link aria-label="terms of use" href="/terms/refund">
                   Refund
                 </Link>
               </li>
